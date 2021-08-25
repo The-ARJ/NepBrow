@@ -8,10 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
-/**
- *
- * @author ArifMahmud
- */
+
 public class HelloApplication extends Application {
 
 
