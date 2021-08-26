@@ -21,7 +21,7 @@ public class HelloApplication extends Application {
 
         stage.setScene(scene);
         stage.setTitle("NepBrow");
-        stage.getIcons().add(new Image("file:Resources/icon256.png"));
+        stage.getIcons().add(new Image("file:Resources/browser.png"));
         stage.show();
     }
 
