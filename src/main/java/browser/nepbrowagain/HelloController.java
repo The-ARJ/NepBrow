@@ -500,20 +500,20 @@ public class HelloController implements Initializable {
                 googleMenuItm.setSelected(false);
                 EtG=0; EtB=1;
                 srcEng.setEngine("bing");
-                System.out.println("Bing is the eninge and Google is disabled.");
+                System.out.println("Bing is the engine and Google is disabled.");
             }
             else
             {
                 bingMenuItm.setSelected(false);
                 EtG=1; EtB=0;
                 srcEng.setEngine("google");
-                System.out.println("Google is the eninge and Bing is disabled.");
+                System.out.println("Google is the engine and Bing is disabled.");
             }
         }
         else if(googleMenuItm.isSelected()){
             System.out.println("Inside google");
             srcEng.setEngine("google");
-            System.out.println("Google is the eninge and Bing is disabled.");
+            System.out.println("Google is the engine and Bing is disabled.");
             EtG=1;
         }
 
@@ -694,8 +694,8 @@ public class HelloController implements Initializable {
             borderPane.setCenter(iv);
         }
 
-        public void setTabContent(MyBrowser passedBroser){
-            borderPane.setClip(passedBroser);
+        public void setTabContent(MyBrowser passedBrowser){
+            borderPane.setClip(passedBrowser);
         }
 
 
@@ -1033,7 +1033,7 @@ public class HelloController implements Initializable {
         colorPicker.setOnAction(new EventHandler() {
             public void handle(Event t) {
                 //text.setFill(colorPicker.getValue());
-                System.out.println("Color choosed: " + colorPicker.getValue());
+                System.out.println("Color chose: " + colorPicker.getValue());
             }
         });
 
@@ -1123,7 +1123,7 @@ public class HelloController implements Initializable {
 
     @FXML
     private void createHomeTab(){
-        System.out.println("Home button pressed.");
+
 
         aTab = new NewTab();
         aTab.setTabBackground("file:Resources/b46c8e1cde764e377f0ed9399e6380a6.jpg");
