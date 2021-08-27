@@ -85,7 +85,7 @@ import org.w3c.dom.NodeList;
 public class HelloController implements Initializable {
 
     @FXML
-    private TabPane tabPane;
+    TabPane tabPane;
 
 
     @FXML
