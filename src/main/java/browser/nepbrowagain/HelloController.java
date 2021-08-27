@@ -1,4 +1,3 @@
-
 package browser.nepbrowagain;
 
 import java.io.BufferedReader;
@@ -44,7 +43,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Region;
-import javafx.scene.paint.Color;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.concurrent.Worker.State;
@@ -55,7 +53,6 @@ import javafx.geometry.Side;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckMenuItem;
-import javafx.scene.control.ColorPicker;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.CustomMenuItem;
 import javafx.scene.control.DatePicker;
@@ -359,7 +356,7 @@ public class HelloController implements Initializable {
     public class AutoCompleteTextField extends TextField{
         /** The existing auto complete entries. */
         private final SortedSet<String> entries;
-        /** The pop up used to select an entry. */
+        /** The popup used to select an entry. */
         private ContextMenu entriesPopup;
 
         /** Construct a new AutoCompleteTextField. */
@@ -411,7 +408,7 @@ public class HelloController implements Initializable {
          */
         private void populatePopup(List<String> searchResult) {
             List<CustomMenuItem> menuItems = new LinkedList<>();
-            // If you'd like more entries, modify this line.
+            // If  like more entries,   this line.
             int maxEntries = 10;
             int count = Math.min(searchResult.size(), maxEntries);
             for (int i = 0; i < count; i++)
@@ -483,9 +480,9 @@ public class HelloController implements Initializable {
     SearchEngine srcEng = new SearchEngine("google", "http://www.google.com");
 
     @FXML
-    private CheckMenuItem googleMenuItm;
+     CheckMenuItem googleMenuItm;
     @FXML
-    private CheckMenuItem bingMenuItm;
+    CheckMenuItem bingMenuItm;
 
     ObservableList<String> histItems = FXCollections.observableArrayList ();
 
@@ -498,28 +495,24 @@ public class HelloController implements Initializable {
             {
                 googleMenuItm.setSelected(false);
                 EtG=0; EtB=1;
-                srcEng.setEngine("bing");
-                System.out.println("Bing is the engine and Google is disabled.");
+                srcEng.setEngine("bing");//Bing is the engine and Google is disabled
             }
             else
             {
                 bingMenuItm.setSelected(false);
                 EtG=1; EtB=0;
-                srcEng.setEngine("google");
-                System.out.println("Google is the engine and Bing is disabled.");
+                srcEng.setEngine("google");//Google is the engine and Bing is disabled
             }
         }
         else if(googleMenuItm.isSelected()){
-            System.out.println("Inside google");
-            srcEng.setEngine("google");
-            System.out.println("Google is the engine and Bing is disabled.");
+            srcEng.setEngine("google");//Search Engine google
+            System.out.println("Google is Active");
             EtG=1;
         }
 
         else if(bingMenuItm.isSelected()){
-            System.out.println("Inside Bing.");
-            srcEng.setEngine("bing");
-            System.out.println("Bing is the eninge and Google is disabled.");
+            srcEng.setEngine("bing");//Search Engine Bing
+            System.out.println("Bing is Active");
             EtB=1;
         }
 
@@ -586,7 +579,7 @@ public class HelloController implements Initializable {
             AnchorPane.setRightAnchor(menuBar, 0.0);
 
 
-            urlBox.setPromptText("🔎 Enter URL");
+            urlBox.setPromptText("🔎 Enter URL Here");
             urlBox.setPrefHeight(30);
             urlBox.setPrefWidth(391);
             goButton.setPrefHeight(30);
@@ -604,7 +597,6 @@ public class HelloController implements Initializable {
             smallAnchor.getChildren().add(hBox);
 
 
-            //label.setText("Developed by Arif Mahmud");
             AnchorPane.setTopAnchor(label, 10.0);
             AnchorPane.setLeftAnchor(label, 520.0);
             smallAnchor.getChildren().add(label);
@@ -618,8 +610,7 @@ public class HelloController implements Initializable {
 
             newTab.setContent(smallAnchor);
             newTab.setOnClosed((Event arg) -> {
-                System.out.println("A tab closed.");
-                newTabBtnPosLeft();
+                newTabBtnPosLeft();//tab is closed
                 myBrowser.closeWindow();
             });
 
@@ -664,7 +655,7 @@ public class HelloController implements Initializable {
             String urlStr;
             if(urlBox.getText() != null && !urlBox.getText().isEmpty()){
                 if(!urlBox.getText().contains(".")){
-                    //formating user input url to search engine sepecific url
+                    //formatting user input url to search engine specific url
                     srcEng.setUrlStr(urlBox.getText());
                     urlStr = srcEng.getEngineSpecificUrl();
                 }
@@ -682,7 +673,7 @@ public class HelloController implements Initializable {
                 borderPane.setCenter(myBrowser);
             }
             else{
-                label.setText("You didn't enter anything : (");
+                label.setText("Empty Field");
             }
         }
 
@@ -706,7 +697,7 @@ public class HelloController implements Initializable {
             public MyBrowser(String url) {
                 //tell when page loading is complete
                 webEngine.getLoadWorker().stateProperty().addListener(
-                        new ChangeListener<State>() {   //no need to use lambda expression
+                        new ChangeListener<State>() {
                             public void changed(ObservableValue ov, State oldState, State newState) {
                                 ProgressIndicator progInd = new ProgressIndicator(-1.0);
                                 progInd.setPrefHeight(17);
