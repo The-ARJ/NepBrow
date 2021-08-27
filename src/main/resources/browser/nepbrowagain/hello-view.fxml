@@ -29,16 +29,7 @@
                   </Menu>
                   <Menu mnemonicParsing="false" text="Customize">
                     <items>
-                        <Menu mnemonicParsing="false" text="Set by theme">
-                          <items>
-                            <MenuItem mnemonicParsing="false">
-                                 <graphic>
-                                    <ColorPicker fx:id="colorPicker" />
-                                 </graphic>
-                              </MenuItem>
-                          </items>
-                        </Menu>
-                        <MenuItem fx:id="homePageBackgroundImg" mnemonicParsing="false" onAction="#backgroundImgFunction" text="Set by image" />
+                        <MenuItem fx:id="homePageBackgroundImg" mnemonicParsing="false" onAction="#backgroundImgFunction" text="Select Image" />
                     </items>
                   </Menu>
             </items>

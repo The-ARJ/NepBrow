@@ -87,8 +87,6 @@ public class HelloController implements Initializable {
     @FXML
     private TabPane tabPane;
 
-    @FXML
-    private ColorPicker colorPicker;
 
     @FXML
     MenuItem homePageBackgroundImg;
@@ -1029,13 +1027,6 @@ public class HelloController implements Initializable {
         iv3.setFitWidth(20);
         bookmarkButton.setGraphic(iv3);
 
-        //get value from color picker and set that as home page theme
-        colorPicker.setOnAction(new EventHandler() {
-            public void handle(Event t) {
-                //text.setFill(colorPicker.getValue());
-                System.out.println("Color chose: " + colorPicker.getValue());
-            }
-        });
 
         //Instantiating history object
         histObj = new HistoryObject();
