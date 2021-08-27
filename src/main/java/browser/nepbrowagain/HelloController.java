@@ -1140,8 +1140,7 @@ public class HelloController implements Initializable {
     private void downloadButtonFunction(){
         k++;
         if(k%2 == 0){
-            System.out.println("Download menu is now hidden.");
-            downloadAnchorPane.setVisible(false);
+            downloadAnchorPane.setVisible(false);//Download menu is now hidden
             downloadStatusLabel.setText("");
         }
         else{
