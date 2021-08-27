@@ -1003,7 +1003,7 @@ public class HelloController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        aTab.setTabBackground("file:Resources/b46c8e1cde764e377f0ed9399e6380a6.jpg");
+        aTab.setTabBackground("file:Resources/HomeBackground.jpg");
         Tab tab = aTab.createTab();
         tab.setText("Home Tab");
         tabPane.getTabs().add(tab);
