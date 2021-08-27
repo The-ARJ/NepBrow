@@ -44,6 +44,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Region;
+import javafx.scene.paint.Color;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.concurrent.Worker.State;
@@ -98,7 +99,7 @@ public class HelloController implements Initializable {
     private Menu historyMenu = new Menu(); //no need to make final
 
     @FXML
-    private AnchorPane downloadAnchorPane;
+    AnchorPane downloadAnchorPane;
 
     public class HistoryObject implements Serializable {
 
@@ -561,7 +562,7 @@ public class HelloController implements Initializable {
         }
 
         public Tab createTab(){
-            goButton.setText("Go");
+            goButton.setText("Search");
             newTab.setText("New Tab");
 
             backButton.setText("◁");
@@ -585,11 +586,13 @@ public class HelloController implements Initializable {
             AnchorPane.setRightAnchor(menuBar, 0.0);
 
 
-            urlBox.setPromptText("🔎 enter your url here or search something");
+            urlBox.setPromptText("🔎 Enter URL");
             urlBox.setPrefHeight(30);
             urlBox.setPrefWidth(391);
             goButton.setPrefHeight(30);
-            goButton.setPrefWidth(32);
+            goButton.setPrefWidth(60);
+            goButton.setStyle("-fx-background-color: #66FFCC; ");
+
             reloadButton.setText("↺");
             reloadButton.setPrefHeight(30);
             reloadButton.setPrefWidth(24);
@@ -621,14 +624,12 @@ public class HelloController implements Initializable {
             });
 
             backButton.setOnMouseClicked((MouseEvent me) -> {
-                System.out.println("Back button has been pressed.");
-                myBrowser.goBack();
+                myBrowser.goBack();//Back button pressed
                 label.setText("");
             });
 
             forwardButton.setOnMouseClicked((MouseEvent me) -> {
-                System.out.println("Forward button has been pressed.");
-                myBrowser.goForward();
+                myBrowser.goForward();//Forward button pressed.
                 label.setText("");
             });
 
@@ -1117,7 +1118,7 @@ public class HelloController implements Initializable {
 
 
         aTab = new NewTab();
-        aTab.setTabBackground("file:Resources/unnamed.jpg");
+        aTab.setTabBackground("file:Resources/TabHomeWallpaper.jpg");
         Tab tab = aTab.createTab();
         tab.setText("Home Tab");
         tabPane.getTabs().add(tab);
