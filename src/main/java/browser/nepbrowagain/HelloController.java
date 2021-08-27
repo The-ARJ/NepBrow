@@ -1144,8 +1144,7 @@ public class HelloController implements Initializable {
             downloadStatusLabel.setText("");
         }
         else{
-            downloadAnchorPane.setVisible(true);
-            System.out.println("Download menu is now visible.");
+            downloadAnchorPane.setVisible(true);//Download menu is now visible
             downloadAnchorPane.setStyle("-fx-background-color: gray;");
         }
     }
