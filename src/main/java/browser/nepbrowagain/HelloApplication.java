@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 public class HelloApplication extends Application {
 
 
-    /*creating new scene*/
+    /*Creating new scene*/
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
