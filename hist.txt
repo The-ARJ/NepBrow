@@ -15,5 +15,3 @@ https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=13&id=264960&wreply=https%3
 https://www.google.com/google 2021-08-27 13:13:20
 https://www.google.com/hello 2021-08-27 13:13:27
 https://www.google.com/?gws_rd=cr&ei=YpHvV47aK8vWvATsl5X4CQ#q=hello 2021-08-27 13:14:56
-https://www.google.com/?gws_rd=cr&ei=YpHvV47aK8vWvATsl5X4CQ#q=hi 2021-08-27 13:26:07
-https://www.google.com/?gws_rd=cr&ei=YpHvV47aK8vWvATsl5X4CQ#q=vf 2021-08-27 13:28:32
