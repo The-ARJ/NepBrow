@@ -19,7 +19,7 @@ public class LoginPage implements ActionListener {
         font3 = new Font("Cambria",Font.PLAIN,20);
         font4 = new Font("Californian FB",Font.BOLD,20);
 
-        icon = new ImageIcon("resource/icon.png");
+        icon = new ImageIcon("resources/icon.png");
 
 
         //JFrame
@@ -31,7 +31,7 @@ public class LoginPage implements ActionListener {
 
         //Login Credential
         JLabel Heading= new JLabel("Login Credential");
-        Heading.setBounds(200,20,600,60);
+        Heading.setBounds(100,20,600,60);
         Heading.setFont(font1);
         Heading.setForeground(Color.WHITE);
         p.add(Heading);
@@ -39,42 +39,42 @@ public class LoginPage implements ActionListener {
 
         //User Icon
         JLabel UserIcon;
-        ImageIcon user = new ImageIcon("resource/user.png");
+        ImageIcon user = new ImageIcon("resources/user.png");
         UserIcon = new JLabel("",user,JLabel.CENTER);
-        UserIcon.setBounds(190,130,80,80);
+        UserIcon.setBounds(100,130,80,80);
         p.add(UserIcon);
 
         //username
         JLabel UserName = new JLabel("User Name");
         UserName.setFont(font2);
-        UserName.setBounds(205,205,200,30);
+        UserName.setBounds(110,205,200,30);
         UserName.setForeground(Color.WHITE);
         p.add(UserName);
 
         //username text field
         JTextField UName = new JTextField();
-        UName.setBounds(290,155,250,30);
+        UName.setBounds(190,155,250,30);
         UName.setFont(font3);
         UName.setBackground(Color.lightGray);
         p.add(UName);
 
         //user password icon
         JLabel UserPass;
-        ImageIcon pass = new ImageIcon("resource/pass.png");
+        ImageIcon pass = new ImageIcon("resources/pass.png");
         UserPass = new JLabel("",pass,JLabel.CENTER);
-        UserPass.setBounds(190,240,80,80);
+        UserPass.setBounds(100,240,80,80);
         p.add(UserPass);
 
         //user password label
         JLabel Password = new JLabel("Password");
         Password.setFont(font2);
-        Password.setBounds(205,315,200,30);
+        Password.setBounds(115,315,200,30);
         Password.setForeground(Color.WHITE);
         p.add(Password);
 
         //user password text field
         JPasswordField password = new JPasswordField();
-        password.setBounds(290,260,250,30);
+        password.setBounds(190,270,250,30);
         password.setFont(font3);
         password.setBackground(Color.lightGray);
         p.add(password);
@@ -99,7 +99,7 @@ public class LoginPage implements ActionListener {
         //signup label
         JLabel Account = new JLabel("Create New Account:");
         Account.setFont(font3);
-        Account.setBounds(450,500,200,30);
+        Account.setBounds(50,500,200,30);
         Account.setForeground(Color.CYAN);
         p.add(Account);
 
@@ -107,27 +107,27 @@ public class LoginPage implements ActionListener {
         SignUp = new JButton("Sign Up");
         SignUp.setBackground(Color.cyan);
         SignUp.setForeground(Color.BLACK);
-        SignUp.setBounds(630,500,130,30);
+        SignUp.setBounds(230,500,130,30);
         SignUp.setFont(font3);
         SignUp.addActionListener(this);
         p.add(SignUp);
 
         //background image
         JLabel background;
-        image = new ImageIcon("resource/background.jpg");
+        image = new ImageIcon("resources/logingif.gif");
         background = new JLabel("",image,JLabel.CENTER);
-        background.setBounds(0,0,800,600);
+        background.setBounds(0,0,600,600);
 
 
         //setting up JPanel
-        p.setBounds(0,0,800,600);
+        p.setBounds(0,0,600,600);
         p.setLayout(null);
         p.setVisible(true);
         p.add(background);
         f.add(p);
 
         //setting up JFrame
-        f.setBounds(0,0,800,600);
+        f.setBounds(0,0,600,600);
         f.setIconImage(icon.getImage());
         f.setResizable(false);
         f.setLayout(null);
