@@ -723,8 +723,6 @@ public class HelloController implements Initializable {
                                         myBrowser.reloadWebPage();
                                     });
 
-                                    //String html = (String) webEngine.executeScript("document.documentElement.outerHTML");
-                                    //System.out.println(html);
 
                                     //DOM access
                                     EventListener listener = new EventListener() {
@@ -737,41 +735,32 @@ public class HelloController implements Initializable {
                                     Document doc = webEngine.getDocument();
                                     NodeList el = doc.getElementsByTagName("a");
                                     for (int i = 0; i < el.getLength(); i++) {
-                                        //((EventTarget) el.item(i)).addEventListener("click", (org.w3c.dom.events.EventListener) listener, true);
-                                        //System.out.println(el.item(i).getTextContent());
                                     }
                                 }
                             }
                         });
 
-                history.getEntries().addListener(new
-                                                         ListChangeListener<WebHistory.Entry>() {
-                                                             @Override
-                                                             public void onChanged(ListChangeListener.Change<? extends Entry> c) {
-                                                                 //System.out.println("Inside history code.");
-                                                                 c.next();
-                                                                 for (Entry e : c.getRemoved()) {
-                                                                     //System.out.println("Removing: " + e.getUrl());
-                                                                     historyMenu.getItems().remove(e.getUrl());
-                                                                 }
-                                                                 for (Entry e : c.getAddedSubList()) {
-                                                                     //System.out.println("Adding: " + e.getUrl());
-                                                                     MenuItem menuItem = new MenuItem(e.getUrl().replace(e.getUrl().substring(24), ""));
-                                                                     histObj.addHist(e.getUrl(), "hist.txt"); //save to local file
-                                                                     histItems.add(e.getUrl());
-                                                                     //historyList.setItems(histItems);
-                                                                     menuItem.setGraphic(loadFavicon(e.getUrl()));
-                                                                     //action if this item is clicked on
-                                                                     menuItem.setOnAction((ActionEvent ev) -> {
-                                                                         NewTab aTab = new NewTab();
-                                                                         aTab.goToURL(e.getUrl());
-                                                                         Tab tab = aTab.createTab();
-                                                                         tabPane.getTabs().add(tab);
-                                                                         tabPane.getSelectionModel().select(tab); //take this tab to front
-                                                                         newTabBtnPosRight();
-                                                                     });
-                                                                     historyMenu.setText(LocalDate.now().toString());
-                                                                     historyMenu.getItems().add(menuItem);
+                history.getEntries().addListener(new ListChangeListener<WebHistory.Entry>() {
+                    @Override
+                    public void onChanged(ListChangeListener.Change<? extends Entry> c) {
+                        c.next();
+                        for (Entry e : c.getRemoved()) {
+                            historyMenu.getItems().remove(e.getUrl());
+                        }
+                        for (Entry e : c.getAddedSubList()) {
+                            //System.out.println("Adding: " + e.getUrl());
+                            MenuItem menuItem = new MenuItem(e.getUrl().replace(e.getUrl().substring(24), ""));histObj.addHist(e.getUrl(), "hist.txt"); //save to local file
+                            histItems.add(e.getUrl());//historyList.setItems(histItems);
+                            menuItem.setGraphic(loadFavicon(e.getUrl()));
+                            //action if this item is clicked on
+                            menuItem.setOnAction((ActionEvent ev) -> {NewTab aTab = new NewTab();aTab.goToURL(e.getUrl());
+                                Tab tab = aTab.createTab();
+                                tabPane.getTabs().add(tab);
+                                tabPane.getSelectionModel().select(tab); //take this tab to front
+                                newTabBtnPosRight();
+                            });
+                            historyMenu.setText(LocalDate.now().toString());
+                            historyMenu.getItems().add(menuItem);
                                                                  }
                                                              }
                                                          }
@@ -788,9 +777,7 @@ public class HelloController implements Initializable {
 
                 final WebView smallView = new WebView();
 
-                //disable default popup
-                //browser.setContextMenuEnabled(false);
-                //createContextMenu(browser);
+
                 webEngine.load(url); // load the web page
                 getChildren().add(browser); //add the web view to the scene
             }
@@ -818,6 +805,7 @@ public class HelloController implements Initializable {
                 });
             }
 
+            ///PREVIOUS WINDOWS
             public void goBack(){
                 final WebHistory history = webEngine.getHistory();
                 ObservableList<WebHistory.Entry> entryList = history.getEntries();
@@ -832,6 +820,7 @@ public class HelloController implements Initializable {
                 });
             }
 
+            //FPRWARD WINDOW
             public void goForward(){
                 final WebHistory history = webEngine.getHistory();
                 ObservableList<WebHistory.Entry> entryList = history.getEntries();
