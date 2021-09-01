@@ -11,6 +11,7 @@ module browser.nepbrowagain {
     requires eu.hansolo.tilesfx;
     requires javafx.graphics;
     requires java.sql;
+    requires java.desktop;
 
     opens browser.nepbrowagain to javafx.fxml;
     exports browser.nepbrowagain;
