@@ -55,7 +55,8 @@ public class LoginPage implements ActionListener {
         JTextField UName = new JTextField();
         UName.setBounds(190,155,250,30);
         UName.setFont(font3);
-        UName.setBackground(Color.lightGray);
+        UName.setBackground(Color.darkGray);
+        UName.setForeground(Color.WHITE);
         p.add(UName);
 
         //user password icon
@@ -76,22 +77,23 @@ public class LoginPage implements ActionListener {
         JPasswordField password = new JPasswordField();
         password.setBounds(190,270,250,30);
         password.setFont(font3);
-        password.setBackground(Color.lightGray);
+        password.setBackground(Color.darkGray);
+        password.setForeground(Color.WHITE);
         p.add(password);
 
         //Login button
-        JButton Login = new JButton("Login");
+        JButton Login = new JButton("Sign Up");
         Login.setBackground(Color.GREEN);
         Login.setForeground(Color.BLACK);
-        Login.setBounds(290,350,100,40);
+        Login.setBounds(250,350,120,40);
         Login.setFont(font4);
         p.add(Login);
 
         //Reset button
-        JButton Reset = new JButton("Reset");
+        JButton Reset = new JButton("Exit");
         Reset.setBackground(Color.ORANGE);
         Reset.setForeground(Color.BLACK);
-        Reset.setBounds(440,350,100,40);
+        Reset.setBounds(450,500,100,40);
         Reset.setFont(font4);
         p.add(Reset);
 
