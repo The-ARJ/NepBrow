@@ -473,11 +473,26 @@ public class HelloController implements Initializable {
             goButton.setText("Search");
             newTab.setText("New Tab");
 
-            backButton.setText("◁");
-            forwardButton.setText("▷");
+            ImageView vi = new ImageView();
+            Image imge = new Image("file:Resources/left.png");
+            vi.setImage(imge);
+            vi.setFitHeight(25);
+            vi.setFitWidth(25);
+            backButton.setGraphic(vi);
+
+
+
+            ImageView vii = new ImageView();
+            Image imgs = new Image("file:Resources/right.png");
+            vii.setImage(imgs);
+            vii.setFitHeight(25);
+            vii.setFitWidth(25);
+            forwardButton.setGraphic(vii);
+
             toolBar.getItems().addAll(backButton, forwardButton);
             toolBar.setPrefHeight(40);
-            toolBar.setPrefWidth(549);
+            toolBar.setStyle("-fx-background-color: #66FFCC; ");
+            toolBar.setPrefWidth(550);
             AnchorPane.setTopAnchor(toolBar, 0.0);
             AnchorPane.setLeftAnchor(toolBar, 0.0);
             AnchorPane.setRightAnchor(toolBar, 0.0);
@@ -499,7 +514,7 @@ public class HelloController implements Initializable {
             urlBox.setPrefWidth(700);
             goButton.setPrefHeight(30);
             goButton.setPrefWidth(60);
-            goButton.setStyle("-fx-background-color: #66FFCC; ");
+            goButton.setStyle("-fx-background-color: #1FE31D; ");
 
             reloadButton.setText("↺");
             reloadButton.setPrefHeight(30);
@@ -508,7 +523,7 @@ public class HelloController implements Initializable {
             hBox.getChildren().addAll(urlBox, goButton, reloadButton);
             hBox.setSpacing(5.0);
             AnchorPane.setTopAnchor(hBox, 5.0);
-            AnchorPane.setLeftAnchor(hBox, 60.0);
+            AnchorPane.setLeftAnchor(hBox, 100.0);
             smallAnchor.getChildren().add(hBox);
 
 
