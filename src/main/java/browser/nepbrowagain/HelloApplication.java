@@ -20,7 +20,7 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(root);
 
         stage.setScene(scene);
-        stage.setTitle("NepBrow");//title of browser2021
+        stage.setTitle("NepBrow");//title of browser
         stage.getIcons().add(new Image("file:Resources/browser.png"));
         stage.show();
     }
