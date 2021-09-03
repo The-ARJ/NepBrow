@@ -716,6 +716,15 @@ public class HelloController implements Initializable {
                                     myBrowser.reloadWebPage();
                                 });
 
+
+                                //DOM access
+                                EventListener listener = new EventListener() {
+                                    public void handleEvent(Event ev) {
+                                        //Platform.exit();
+                                        System.out.println("You pressed on a link");
+                                    }
+                                };
+
                                 Document doc = webEngine.getDocument();
                                 NodeList el = doc.getElementsByTagName("a");
                                 for (int i = 0; i < el.getLength(); i++) {
@@ -748,7 +757,7 @@ public class HelloController implements Initializable {
                                                              }
                                                          }
                 );
-                //handle popup windows
+                //right button clicked options
                 webEngine.setCreatePopupHandler(
                         (PopupFeatures config) -> {
                             browser.setFontScale(0.8);
@@ -766,7 +775,7 @@ public class HelloController implements Initializable {
             }
 
 
-            //pop up control
+            //pop up control /right button clicked options
             private void createContextMenu(WebView webView) {
                 ContextMenu contextMenu = new ContextMenu();
                 MenuItem reload = new MenuItem("Reload");
@@ -788,7 +797,7 @@ public class HelloController implements Initializable {
                 });
             }
 
-            ///PREVIOUS WINDOWS
+            ///Backward button Action or Previous Window
             public void goBack(){
                 final WebHistory history = webEngine.getHistory();
                 ObservableList<WebHistory.Entry> entryList = history.getEntries();
@@ -803,7 +812,7 @@ public class HelloController implements Initializable {
                 });
             }
 
-            //FPRWARD WINDOW
+            //Forward Button Action
             public void goForward(){
                 final WebHistory history = webEngine.getHistory();
                 ObservableList<WebHistory.Entry> entryList = history.getEntries();
