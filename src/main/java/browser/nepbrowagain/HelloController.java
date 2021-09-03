@@ -983,15 +983,14 @@ public class HelloController implements Initializable {
                     for (int i = 0; i < ar.size(); i++) {
                         prevHistItems.add(ar.get(i).url);
                     }
-                    prevHistoryListView.setItems(prevHistItems);
                 }
                 else{
                     ar = histObj.getHistByDate(startDatePicker.getValue(), endDatePicker.getValue(), "hist.txt");
                     for (int i = 0; i < ar.size(); i++) {
                         prevHistItems.add(ar.get(i).url);
                     }
-                    prevHistoryListView.setItems(prevHistItems);
                 }
+                prevHistoryListView.setItems(prevHistItems);
             }
         });
 
