@@ -1078,7 +1078,7 @@ public class HelloController implements Initializable {
         }
 
         if(delStartDatePicker.getValue() != null && delEndDatePicker.getValue() != null){
-            delHistLabel.setText("History has been deleted.");
+            delHistLabel.setText("History is being deleted.");
             histObj.deleteHistByDate(delStartDatePicker.getValue(), delEndDatePicker.getValue(), "hist.txt");
             System.out.println("Deleted history from " + delStartDatePicker.getValue() + " to " + delEndDatePicker.getValue());
         }
