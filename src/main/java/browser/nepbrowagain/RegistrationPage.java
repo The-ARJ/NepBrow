@@ -24,19 +24,19 @@ public class RegistrationPage implements ActionListener {
         font5 = new Font("Cambria",Font.PLAIN,15);
 
 
-        icon = new ImageIcon("resource/registration.png");
+        icon = new ImageIcon("resources/browser.png");
 
 
         //JFrame
-        f = new JFrame("Login Page");
+        f = new JFrame("USER SIGN UP");
 
         //JPanel
         p = new JPanel();
 
 
         //Login Credential
-        JLabel Heading= new JLabel("Registration Form");
-        Heading.setBounds(200,20,600,60);
+        JLabel Heading= new JLabel("USER SIGN UP");
+        Heading.setBounds(150,20,600,60);
         Heading.setFont(font1);
         Heading.setForeground(Color.WHITE);
         p.add(Heading);
@@ -164,20 +164,20 @@ public class RegistrationPage implements ActionListener {
 
         //background image
         JLabel background;
-        image = new ImageIcon("resource/background2.png");
+        image = new ImageIcon("resources/registrationgif.gif");
         background = new JLabel("",image,JLabel.CENTER);
-        background.setBounds(0,0,800,600);
+        background.setBounds(0,0,600,600);
 
 
         //setting up JPanel
-        p.setBounds(0,0,800,600);
+        p.setBounds(0,0,600,600);
         p.setLayout(null);
         p.setVisible(true);
         p.add(background);
         f.add(p);
 
         //setting up JFrame
-        f.setBounds(0,0,800,600);
+        f.setBounds(0,0,600,600);
         f.setIconImage(icon.getImage());
         f.setResizable(false);
         f.setLayout(null);
@@ -201,15 +201,15 @@ public class RegistrationPage implements ActionListener {
             new LoginPage();
             f.dispose();
         }
-//        if(e.getSource()==Btn_SignUp){
-//            System.out.println("Button Pressed");
-//            JDBC db = new JDBC();
-//            String query = "insert into register(first name,last name,address,email) values('"+FirstName+"','"+LastName+"','"+Address+"','"+email+"')";
-//            int ans = db.insert(query);
-//            if (ans>0){
-//                JOptionPane.showMessageDialog(f,"Registration Completed");
-//            }
+        if(e.getSource()==Btn_SignUp){
+            System.out.println("Button Pressed");
+            JDBC db = new JDBC();
+            String query = "insert into register(first name,last name,address,email) values('"+FirstName+"','"+LastName+"','"+Address+"','"+email+"')";
+
+            }
         }
 
+    public static void main(String[] args) {
+        new RegistrationPage();
     }
-//}
+}

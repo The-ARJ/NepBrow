@@ -45,11 +45,11 @@
             <Insets top="6.0" />
          </padding>
       </MenuBar>
-      <Button fx:id="homeBtn" mnemonicParsing="false" onAction="#createHomeTab" onMouseEntered="#homeBtnHover" onMouseExited="#homeBtnHoverExit" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="35.0" />
+      <Button fx:id="homeBtn" mnemonicParsing="false" onAction="#createHomeTab" onMouseEntered="#homeBtnHover" onMouseExited="#homeBtnHoverExit" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="35.0" />
       <Label fx:id="downloadLabel" style="-fx-background-color: White;" AnchorPane.rightAnchor="187.0" AnchorPane.topAnchor="68.0" />
       <Button fx:id="downloadButton" layoutX="733.0" layoutY="45.0" mnemonicParsing="false" onAction="#downloadButtonFunction" onMouseEntered="#downloadBtnHover" onMouseExited="#downloadBtnHoverExit" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="35.0" />
       <Label fx:id="homeLabel" style="-fx-background-color: White;" AnchorPane.rightAnchor="252.0" AnchorPane.topAnchor="68.0" />
-      <Button fx:id="bookmarkButton" layoutX="683.0" layoutY="45.0" mnemonicParsing="false" onAction="#bookmarkButtonFunction" onMouseEntered="#bookmarkBtnHover" onMouseExited="#bookmarkBtnHoverExit" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="35.0" />
+      <Button fx:id="bookmarkButton" layoutX="683.0" layoutY="45.0" mnemonicParsing="false" onAction="#bookmarkButtonFunction" onMouseEntered="#bookmarkBtnHover" onMouseExited="#bookmarkBtnHoverExit" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="35.0" />
       <Label fx:id="bookmarkLabel" layoutX="726.0" layoutY="70.0" style="-fx-background-color: White;" AnchorPane.rightAnchor="292.0" AnchorPane.topAnchor="68.0" />
       <AnchorPane fx:id="downloadAnchorPane" prefHeight="200.0" prefWidth="200.0" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="70.0">
          <children>

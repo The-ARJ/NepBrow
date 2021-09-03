@@ -19,19 +19,19 @@ public class LoginPage implements ActionListener {
         font3 = new Font("Cambria",Font.PLAIN,20);
         font4 = new Font("Californian FB",Font.BOLD,20);
 
-        icon = new ImageIcon("resources/icon.png");
+        icon = new ImageIcon("resources/browser.png");
 
 
         //JFrame
-        f = new JFrame("Login Page");
+        f = new JFrame("USER LOGIN");
 
         //JPanel
         p = new JPanel();
 
 
         //Login Credential
-        JLabel Heading= new JLabel("Login Credential");
-        Heading.setBounds(100,20,600,60);
+        JLabel Heading= new JLabel("USER LOGIN");
+        Heading.setBounds(150,20,600,60);
         Heading.setFont(font1);
         Heading.setForeground(Color.WHITE);
         p.add(Heading);
@@ -82,7 +82,7 @@ public class LoginPage implements ActionListener {
         p.add(password);
 
         //Login button
-        JButton Login = new JButton("Sign Up");
+        JButton Login = new JButton("Sign In");
         Login.setBackground(Color.GREEN);
         Login.setForeground(Color.BLACK);
         Login.setBounds(250,350,120,40);

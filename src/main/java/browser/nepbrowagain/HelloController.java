@@ -396,16 +396,13 @@ public class HelloController implements Initializable {
 
         }
 
-        /**
-         * Get the existing set of auto complete entries.
-         * @return The existing auto complete entries.
-         */
+
+        // Get the existing set of auto complete entries.
+
         public SortedSet<String> getEntries() { return entries; }
 
-        /**
-         * Populate the entry set with the given search results.  Display is limited to 10 entries, for performance.
-         * @param searchResult The set of matching strings.
-         */
+        // Populate the entry set with the given search results.  Display is limited to 10 entries, for performance.
+
         private void populatePopup(List<String> searchResult) {
             List<CustomMenuItem> menuItems = new LinkedList<>();
             // If  like more entries,   this line.
@@ -695,47 +692,33 @@ public class HelloController implements Initializable {
             WebHistory history = webEngine.getHistory();
 
             public MyBrowser(String url) {
-                //tell when page loading is complete
+                // when page loading is completed
                 webEngine.getLoadWorker().stateProperty().addListener(
-                        new ChangeListener<State>() {
-                            public void changed(ObservableValue ov, State oldState, State newState) {
-                                ProgressIndicator progInd = new ProgressIndicator(-1.0);
-                                progInd.setPrefHeight(17);
-                                progInd.setPrefWidth(25);
-                                newTab.setGraphic(progInd);
+                        (ov, oldState, newState) -> {
+                            //stop reloading
+                            reloadButton.setText("X");
+                            reloadButton.setStyle("-fx-background-color: #FF3377; ");
 
-                                //make reload button -> stop loading button
-                                reloadButton.setText("X");
+                            reloadButton.setOnAction((ActionEvent e) -> {
+                                myBrowser.closeWindow();
+                                newTab.setText("Aborted!");
+                                newTab.setGraphic(null);
+                            });
+
+                            if (newState == State.SUCCEEDED) {
+                                label.setText("");
+                                newTab.setText(webEngine.getTitle());
+                                urlBox.setText(webEngine.getLocation());
+                                newTab.setGraphic(loadFavicon(url));
+                                reloadButton.setText(("↺"));
+                                reloadButton.setStyle("-fx-background-color: #B533FF; ");
                                 reloadButton.setOnAction((ActionEvent e) -> {
-                                    myBrowser.closeWindow();
-                                    newTab.setText("Aborted!");
-                                    label.setText("You have aborted loading the page.");
-                                    newTab.setGraphic(null);
+                                    myBrowser.reloadWebPage();
                                 });
 
-                                if (newState == State.SUCCEEDED) {
-                                    label.setText("");
-                                    newTab.setText(webEngine.getTitle());
-                                    urlBox.setText(webEngine.getLocation());
-                                    newTab.setGraphic(loadFavicon(url));
-                                    reloadButton.setText(("↺"));
-                                    reloadButton.setOnAction((ActionEvent e) -> {
-                                        myBrowser.reloadWebPage();
-                                    });
-
-
-                                    //DOM access
-                                    EventListener listener = new EventListener() {
-                                        public void handleEvent(Event ev) {
-                                            //Platform.exit();
-                                            System.out.println("You pressed on a link");
-                                        }
-                                    };
-
-                                    Document doc = webEngine.getDocument();
-                                    NodeList el = doc.getElementsByTagName("a");
-                                    for (int i = 0; i < el.getLength(); i++) {
-                                    }
+                                Document doc = webEngine.getDocument();
+                                NodeList el = doc.getElementsByTagName("a");
+                                for (int i = 0; i < el.getLength(); i++) {
                                 }
                             }
                         });
