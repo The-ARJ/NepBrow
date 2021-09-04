@@ -34,7 +34,7 @@ public class RegistrationPage implements ActionListener {
         p = new JPanel();
 
 
-        //Login Credentials
+        //Login Credential
         JLabel Heading= new JLabel("USER SIGN UP");
         Heading.setBounds(150,20,600,60);
         Heading.setFont(font1);
