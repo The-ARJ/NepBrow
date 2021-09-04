@@ -17,7 +17,7 @@
    <children>
       <Pane prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: #823CEA;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="500.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label alignment="CENTER" layoutX="65.0" layoutY="269.0" prefHeight="105.0" prefWidth="371.0" text="WELCOME TO NEPBROW" textFill="#270e80">
+            <Label alignment="CENTER" layoutX="65.0" layoutY="300.0" prefHeight="105.0" prefWidth="371.0" text="WELCOME TO NEPBROW" textFill="#270e80">
                <font>
                   <Font name="AdobeDevanagari-Bold" size="33.0" />
                </font>
@@ -61,6 +61,27 @@
                   </LinearGradient>
                </textFill>
             </JFXButton>
+            <Label layoutX="145.0" layoutY="33.0" prefHeight="70.0" prefWidth="211.0" text="USER LOGIN">
+               <font>
+                  <Font size="38.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0" startX="0.6142857142857143">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.5341631770133972" green="0.12319999933242798" blue="0.7699999809265137" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
          </children>
       </Pane>
    </children>
