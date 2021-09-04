@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="browser.nepbrowagain.LoginController">
+   <children>
+      <Pane prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: #823CEA;">
+         <children>
+            <Label alignment="CENTER" layoutX="65.0" layoutY="269.0" prefHeight="105.0" prefWidth="371.0" text="WELCOME TO NEPBROW" textFill="#270e80">
+               <font>
+                  <Font name="AdobeDevanagari-Bold" size="33.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="178.0" fitWidth="236.0" layoutX="160.0" layoutY="122.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../resources/logo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="500.0" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: #41F8E4;">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="175.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../resources/userlogin.png" />
+               </image>
+            </ImageView>
+            <TextField layoutX="132.0" layoutY="321.0" prefHeight="28.0" prefWidth="236.0" promptText="User Name" style="-fx-background-color: #94F8DA;" />
+            <PasswordField layoutX="132.0" layoutY="389.0" prefHeight="28.0" prefWidth="236.0" promptText="Password" style="-fx-background-color: #94F8DA;" />
+            <JFXButton buttonType="RAISED" layoutX="250.0" layoutY="428.0" onAction="#switchtobrowser" prefHeight="45.0" prefWidth="123.0" ripplerFill="#23d7d1" text="SIGN IN" textFill="#a421ff">
+               <font>
+                  <Font name="Arial Black" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="325.0" layoutY="528.0" text="CREATE NEW ACCOUNT">
+               <textFill>
+                  <LinearGradient endX="0.8142857142857143" endY="0.5952380952380952" startY="0.06190476190476191">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.6447368264198303" green="0.04775828495621681" blue="0.6447368264198303" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.0899122804403305" green="0.2368421107530594" blue="0.23194444179534912" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </JFXButton>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
