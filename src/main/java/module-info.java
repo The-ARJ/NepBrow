@@ -12,6 +12,7 @@ module browser.nepbrowagain {
     requires javafx.graphics;
     requires java.sql;
     requires java.desktop;
+    requires com.jfoenix;
 
     opens browser.nepbrowagain to javafx.fxml;
     exports browser.nepbrowagain;
