@@ -102,8 +102,7 @@ public class SceneController {
 
         try{
             ResultSet queryResult = jdbc.select(verifyLogin);
-            while((queryResult.next())){
-                if (queryResult.getInt(1)==1){
+                if (queryResult.next()){
                     LoginMessage.setText("Login Successful");
                     Stage Window = (Stage) SignIN.getScene().getWindow();
                     Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
@@ -112,7 +111,6 @@ public class SceneController {
                 else{
                     LoginMessage.setText("User Name or Password do not match");
                 }
-            }
         }catch (Exception e){
             e.printStackTrace();
         }
