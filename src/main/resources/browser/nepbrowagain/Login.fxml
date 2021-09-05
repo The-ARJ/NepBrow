@@ -36,8 +36,8 @@
                   <Image url="file:/C:/Users/Aayush/IdeaProjects/NepBrowser/resources/userlogin.png" />
                </image>
             </ImageView>
-            <TextField layoutX="132.0" layoutY="321.0" prefHeight="28.0" prefWidth="236.0" promptText="User Name" style="-fx-background-color: #94F8DA;" />
-            <PasswordField layoutX="132.0" layoutY="389.0" prefHeight="28.0" prefWidth="236.0" promptText="Password" style="-fx-background-color: #94F8DA;" />
+            <TextField fx:id="UserName" layoutX="132.0" layoutY="321.0" prefHeight="28.0" prefWidth="236.0" promptText="User Name" style="-fx-background-color: #94F8DA;" />
+            <PasswordField fx:id="Password" layoutX="132.0" layoutY="389.0" prefHeight="28.0" prefWidth="236.0" promptText="Password" style="-fx-background-color: #94F8DA;" />
             <JFXButton fx:id="SignIN" buttonType="RAISED" layoutX="250.0" layoutY="428.0" onAction="#handlebutton4" prefHeight="45.0" prefWidth="123.0" ripplerFill="#23d7d1" text="SIGN IN" textFill="#a421ff">
                <font>
                   <Font name="Arial Black" size="18.0" />
@@ -76,6 +76,27 @@
                         <Stop offset="1.0">
                            <color>
                               <Color />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label fx:id="LoginMessage" layoutX="118.0" layoutY="285.0" prefHeight="28.0" prefWidth="264.0" textAlignment="CENTER">
+               <font>
+                  <Font name="Bodoni MT" size="15.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.8815789222717285" green="0.16733674705028534" blue="0.16733674705028534" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.5526315569877625" green="0.2711988389492035" blue="0.2711988389492035" />
                            </color>
                         </Stop>
                      </stops>
