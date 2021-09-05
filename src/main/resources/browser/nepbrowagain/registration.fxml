@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -14,7 +15,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="browser.nepbrowagain.SceneController">
     <children>
-        <Pane layoutX="600.0" prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #823CEA;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="600.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <Pane fx:id="User_Name" layoutX="600.0" prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #823CEA;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="600.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                 <Label alignment="CENTER" layoutX="8.0" layoutY="47.0" prefHeight="105.0" prefWidth="371.0" text="USER SIGN UP">
                     <font>
@@ -37,10 +38,9 @@
                   </LinearGradient>
                </textFill>
                 </Label>
-            <TextField layoutX="79.0" layoutY="189.0" prefHeight="28.0" prefWidth="254.0" promptText="Full Name" style="-fx-background-color: #F8B541;" />
-            <TextField layoutX="79.0" layoutY="319.0" prefHeight="28.0" prefWidth="254.0" promptText="Email" style="-fx-background-color: #F8B541;" />
-            <TextField layoutX="79.0" layoutY="384.0" prefHeight="28.0" prefWidth="254.0" promptText="Password" style="-fx-background-color: #F8B541;" />
-            <TextField layoutX="79.0" layoutY="256.0" prefHeight="28.0" prefWidth="254.0" promptText="User Name" style="-fx-background-color: #F8B541;" />
+            <TextField fx:id="Full_Name" layoutX="79.0" layoutY="189.0" prefHeight="28.0" prefWidth="254.0" promptText="Full Name" style="-fx-background-color: #F8B541;" />
+            <TextField fx:id="email" layoutX="79.0" layoutY="319.0" prefHeight="28.0" prefWidth="254.0" promptText="Email" style="-fx-background-color: #F8B541;" />
+            <TextField fx:id="user_name" layoutX="79.0" layoutY="256.0" prefHeight="28.0" prefWidth="254.0" promptText="User Name" style="-fx-background-color: #F8B541;" />
                 <JFXButton fx:id="SignUP" buttonType="RAISED" layoutX="252.0" layoutY="448.0" onAction="#handlebutton1" prefHeight="45.0" prefWidth="123.0" ripplerFill="#23d7d1" text="SIGN UP" textFill="#21ffdb">
                     <font>
                         <Font name="Arial Black" size="18.0" />
@@ -64,6 +64,49 @@
                         </LinearGradient>
                     </textFill>
                 </JFXButton>
+            <PasswordField fx:id="password" layoutX="79.0" layoutY="380.0" prefHeight="25.0" prefWidth="254.0" promptText="Password" style="-fx-background-color: #F8B541;" />
+            <Label fx:id="signuplabel" layoutX="79.0" layoutY="141.0" prefHeight="28.0" prefWidth="254.0">
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.9078947305679321" green="0.26900583505630493" blue="0.26900583505630493" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.8600000143051147" green="0.10320000350475311" blue="0.8408750891685486" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="signuplabel2" layoutX="79.0" layoutY="428.0" prefHeight="28.0" prefWidth="254.0">
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0" startX="0.34285714285714286">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color green="0.800000011920929" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.125" green="1.0" blue="0.5041666626930237" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
             </children>
         </Pane>
         <Pane prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #41F8E4;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">

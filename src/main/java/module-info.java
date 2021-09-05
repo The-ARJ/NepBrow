@@ -13,6 +13,7 @@ module browser.nepbrowagain {
     requires java.sql;
     requires java.desktop;
     requires com.jfoenix;
+    requires mysql.connector.java;
 
     opens browser.nepbrowagain to javafx.fxml;
     exports browser.nepbrowagain;
