@@ -1,23 +1,21 @@
 package browser.nepbrowagain;
 
-import com.jfoenix.controls.JFXTextField;
+
 import javafx.fxml.FXML;
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
+
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
+
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import javax.swing.*;
-import javax.swing.plaf.nimbus.State;
+
 import java.io.IOException;
 import java.sql.ResultSet;
-import java.sql.Statement;
 
 public class SceneController {
     @FXML
@@ -62,6 +60,7 @@ public class SceneController {
             if(Full_Name.getText().isBlank()==true && user_name.getText().isBlank()==true && email.getText().isBlank()==true && password.getText().isBlank()==true) {
                 signuplabel.setText("Please Enter Credentials");}
 
+
             if(Full_Name.getText().isBlank()==false && user_name.getText().isBlank()==false && email.getText().isBlank()==false && password.getText().isBlank()==false) {
                 String sql = "Insert Into tbl_registration(FullName,UserName,Email,Password) Values('"+full_name+"','"+user_Name+"','"+user_email+"','"+user_password+"')";
                 int ans = jdbc.insert(sql);
@@ -72,7 +71,7 @@ public class SceneController {
 
                 }
             }
-        });
+  });
     }
 
     //Create New Account Function
@@ -102,7 +101,8 @@ public class SceneController {
 
         try{
             ResultSet queryResult = jdbc.select(verifyLogin);
-                if (queryResult.next()){
+            while((queryResult.next())){
+                if (queryResult.getInt(1)==1){
                     LoginMessage.setText("Login Successful");
                     Stage Window = (Stage) SignIN.getScene().getWindow();
                     Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
@@ -111,6 +111,7 @@ public class SceneController {
                 else{
                     LoginMessage.setText("User Name or Password do not match");
                 }
+            }
         }catch (Exception e){
             e.printStackTrace();
         }
