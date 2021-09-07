@@ -612,6 +612,7 @@ public class HelloController implements Initializable {
             }
         }
 
+        //  Setting table background
         public void setTabBackground(String imageFileLocation){
             ImageView iv = new ImageView();
             Image img = new Image(imageFileLocation);
@@ -695,7 +696,7 @@ public class HelloController implements Initializable {
                                                              }
                                                          }
                 );
-                //right button clicked options
+                // Right button clicked options
                 webEngine.setCreatePopupHandler(
                         (PopupFeatures config) -> {
                             browser.setFontScale(0.8);
@@ -713,7 +714,7 @@ public class HelloController implements Initializable {
             }
 
 
-            //pop up control /right button clicked options
+            // pop up control /right button clicked options
             private void createContextMenu(WebView webView) {
                 ContextMenu contextMenu = new ContextMenu();
                 MenuItem reload = new MenuItem("Reload");
@@ -939,7 +940,7 @@ public class HelloController implements Initializable {
         bookmarkButton.setGraphic(iv3);
 
 
-        //Instantiating history object
+        // Instantiating history object
         histObj = new HistoryObject();
         startDatePicker.setOnAction(new EventHandler() {
             public void handle(Event t) {
