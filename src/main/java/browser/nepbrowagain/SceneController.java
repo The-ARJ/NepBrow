@@ -84,7 +84,7 @@ public class SceneController {
     }
 
 
-    //Already have account Function
+    // having already account
     public void handlebutton3() throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
         Stage Window = (Stage) AlreadyHaveAccount.getScene().getWindow();
