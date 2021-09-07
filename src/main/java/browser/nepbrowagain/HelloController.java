@@ -77,7 +77,7 @@ public class HelloController implements Initializable {
     TabPane tabPane;
 
     @FXML
-    Label downloadStatusLabel;
+    Label downloadStatusLabel;  //creating object downloadStatusLabel
 
     @FXML
     private Menu historyMenu = new Menu(); //no need to make final
