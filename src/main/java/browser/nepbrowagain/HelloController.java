@@ -85,6 +85,7 @@ public class HelloController implements Initializable {
     @FXML
     AnchorPane downloadAnchorPane;
 
+    // making class historyObject
     public class HistoryObject implements Serializable {
 
         String url;
