@@ -73,7 +73,7 @@ import org.w3c.dom.NodeList;
 
 public class HelloController implements Initializable {
 
-    @FXML
+    @FXML    // creating object tabPane
     TabPane tabPane;
 
     @FXML
