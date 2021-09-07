@@ -21,20 +21,20 @@ public class SceneController {
     @FXML
     JFXButton SignIN,SignUP,AlreadyHaveAccount,CreateNewAccount;
 
-    @FXML//userLogin
+    @FXML   // UserLogin
     TextField UserName;
 
-    @FXML //registration
+    @FXML   // Registration
     TextField Full_Name,user_name,email;
 
     @FXML
     PasswordField Password,password;
 
     @FXML
-    Label LoginMessage;//signin
+    Label LoginMessage;// SignIn
 
     @FXML//signup
-    Label signuplabel,signuplabel2;
+    Label signuplabel, signuplabel2;
 
     private Stage stage;
     private Scene scene;
@@ -51,7 +51,7 @@ public class SceneController {
 
 
 
-        //USER REGISTRATION AND SIGN UP BUTTON FUNCTION
+        //USER REGISTRATION AND SIGN UP BUTTON FUNCTIONS
         SignUP.setOnAction(e ->{
             System.out.println("Button pressed");
             JDBC jdbc = new JDBC();
