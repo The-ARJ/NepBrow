@@ -85,6 +85,7 @@ public class HelloController implements Initializable {
     @FXML
     AnchorPane downloadAnchorPane;
 
+    // making class historyObject
     public class HistoryObject implements Serializable {
 
         String url;
@@ -220,6 +221,7 @@ public class HelloController implements Initializable {
 
         }
 
+        // Delete history function
         public void deleteHistByDate(LocalDate StartDate,LocalDate EndDate,String fileName){
             ArrayList<HistoryObject> ar= new ArrayList();
 
@@ -270,7 +272,7 @@ public class HelloController implements Initializable {
         }
     }
 
-    //handle download tasks
+    // download tasks
     private class DownloadTask extends Task<Void> {
 
         private String url;
@@ -313,13 +315,13 @@ public class HelloController implements Initializable {
             downloadStatusLabel.setText("File download complete");
         }
     }
-    //create content for downloads
+    //create contents for downloads
     private Parent createContent() {
         VBox root = new VBox();
         root.setPrefSize(300, 400);
 
         TextField fieldURL = new TextField();
-        fieldURL.setPromptText("Enter Download Link here");
+        fieldURL.setPromptText("Enter Download Link here");  // Link to download
         root.getChildren().addAll(fieldURL);
 
         fieldURL.setOnAction(event -> {
@@ -340,6 +342,7 @@ public class HelloController implements Initializable {
         return root;
     }
 
+    // auto  complete textField function
     public class AutoCompleteTextField extends TextField{
         /** The existing auto complete entries. */
 
@@ -433,6 +436,7 @@ public class HelloController implements Initializable {
 
     }
 
+    // For new Tab
     class NewTab{
         //properties
         private final Tab newTab;
@@ -469,8 +473,9 @@ public class HelloController implements Initializable {
             borderPane = new BorderPane();
         }
 
+        // creating new tab
         public Tab createTab(){
-            goButton.setText("Search");
+            goButton.setText("Search"); // Search Pannel
             newTab.setText("New Tab");
 
             ImageView vi = new ImageView();
@@ -607,6 +612,7 @@ public class HelloController implements Initializable {
             }
         }
 
+        //  Setting table background
         public void setTabBackground(String imageFileLocation){
             ImageView iv = new ImageView();
             Image img = new Image(imageFileLocation);
@@ -690,7 +696,7 @@ public class HelloController implements Initializable {
                                                              }
                                                          }
                 );
-                //right button clicked options
+                // Right button clicked options
                 webEngine.setCreatePopupHandler(
                         (PopupFeatures config) -> {
                             browser.setFontScale(0.8);
@@ -708,7 +714,7 @@ public class HelloController implements Initializable {
             }
 
 
-            //pop up control /right button clicked options
+            // pop up control /right button clicked options
             private void createContextMenu(WebView webView) {
                 ContextMenu contextMenu = new ContextMenu();
                 MenuItem reload = new MenuItem("Reload");
@@ -934,7 +940,7 @@ public class HelloController implements Initializable {
         bookmarkButton.setGraphic(iv3);
 
 
-        //Instantiating history object
+        // Instantiating history object
         histObj = new HistoryObject();
         startDatePicker.setOnAction(new EventHandler() {
             public void handle(Event t) {
