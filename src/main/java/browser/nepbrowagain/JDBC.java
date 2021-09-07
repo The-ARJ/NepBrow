@@ -13,7 +13,7 @@ public class JDBC {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             //creating the connection
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/browserjdbc", "root", "Nitesh@123");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/browserjdbc", "root", "Gioness5.1");
             if (con != null) {
                 System.out.println("Database is Connected Successfully");
             }

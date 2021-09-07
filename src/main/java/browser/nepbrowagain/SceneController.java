@@ -17,6 +17,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.ResultSet;
 
+// sceneController operations
+
 public class SceneController {
     @FXML
     JFXButton SignIN,SignUP,AlreadyHaveAccount,CreateNewAccount;
