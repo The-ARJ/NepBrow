@@ -18,6 +18,7 @@ import java.io.IOException;
 import java.sql.ResultSet;
 
 public class SceneController {
+    // defines buttons
     @FXML
     JFXButton SignIN,SignUP,AlreadyHaveAccount,CreateNewAccount;
 
