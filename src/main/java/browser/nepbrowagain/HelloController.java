@@ -654,7 +654,7 @@ public class HelloController implements Initializable {
                                 EventListener listener = new EventListener() {
                                     public void handleEvent(Event ev) {
                                         //Platform.exit();
-                                        System.out.println("You pressed on a link");
+                                        System.out.println("You pressed on link"); // for pressing on the link
                                     }
                                 };
 
@@ -683,7 +683,7 @@ public class HelloController implements Initializable {
                                 tabPane.getTabs().add(tab);
                                 tabPane.getSelectionModel().select(tab); //take this tab to front
                                 newTabBtnPosRight();
-                            });
+                            }); // done
                             historyMenu.setText(LocalDate.now().toString());
                             historyMenu.getItems().add(menuItem);
                                                                  }
@@ -758,7 +758,7 @@ public class HelloController implements Initializable {
                             ? 1
                             : 0);
                 });
-            }
+            } //forward button
 
             public ImageView loadFavicon(String location) {
                 try {
@@ -919,7 +919,7 @@ public class HelloController implements Initializable {
         iv.setFitWidth(20);
         homeBtn.setGraphic(iv);
 
-        ImageView iv2 = new ImageView();
+        ImageView iv2 = new ImageView(); // download icon
         Image img2 = new Image("file:Resources/downloadIcon.png");
         iv2.setImage(img2);
         iv2.setFitHeight(21);
