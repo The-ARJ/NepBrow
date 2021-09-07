@@ -220,6 +220,7 @@ public class HelloController implements Initializable {
 
         }
 
+
         public void deleteHistByDate(LocalDate StartDate,LocalDate EndDate,String fileName){
             ArrayList<HistoryObject> ar= new ArrayList();
 
@@ -270,7 +271,7 @@ public class HelloController implements Initializable {
         }
     }
 
-    //handle download tasks
+    //download task
     private class DownloadTask extends Task<Void> {
 
         private String url;
@@ -434,7 +435,7 @@ public class HelloController implements Initializable {
     }
 
     class NewTab{
-        //properties
+        //define all properties
         private final Tab newTab;
         private final AnchorPane smallAnchor;
         private final ToolBar toolBar;
@@ -450,7 +451,7 @@ public class HelloController implements Initializable {
         private final BorderPane borderPane;
         private MyBrowser myBrowser;
 
-        //methods
+        //define all methods
         public NewTab(){
             newTab = new Tab();
             smallAnchor = new AnchorPane();
@@ -468,11 +469,12 @@ public class HelloController implements Initializable {
             reloadButton = new Button();
             borderPane = new BorderPane();
         }
-
+        // calling tab methods
         public Tab createTab(){
             goButton.setText("Search");
             newTab.setText("New Tab");
 
+            //calling back button methods
             ImageView vi = new ImageView();
             Image imge = new Image("file:Resources/left.png");
             vi.setImage(imge);
@@ -481,7 +483,7 @@ public class HelloController implements Initializable {
             backButton.setGraphic(vi);
 
 
-
+            //calling forward button methods
             ImageView vii = new ImageView();
             Image imgs = new Image("file:Resources/right.png");
             vii.setImage(imgs);
@@ -489,6 +491,8 @@ public class HelloController implements Initializable {
             vii.setFitWidth(25);
             forwardButton.setGraphic(vii);
 
+
+           //adding back button and forward button in toolbar
             toolBar.getItems().addAll(backButton, forwardButton);
             toolBar.setPrefHeight(40);
             toolBar.setStyle("-fx-background-color: #66FFCC; ");
@@ -508,7 +512,7 @@ public class HelloController implements Initializable {
             menuBar.setPadding(new Insets(6,0,0,0));
             AnchorPane.setRightAnchor(menuBar, 0.0);
 
-
+            // creating url box
             urlBox.setPromptText("🔎 Enter URL Here");
             urlBox.setPrefHeight(30);
             urlBox.setPrefWidth(700);
