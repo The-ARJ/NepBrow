@@ -118,7 +118,7 @@ public class SceneController {
 
 
 
-
+        // checking function value weather the value is true or not
         if (UserName.getText().isBlank()==true && Password.getText().isBlank()==true){
             LoginMessage.setText("Please Enter User Name And Password");
         }
