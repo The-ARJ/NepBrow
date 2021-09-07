@@ -15,12 +15,12 @@ public class HelloApplication extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
 
         Scene scene = new Scene(root);
 
         stage.setScene(scene);
-        stage.setTitle("NepBrow");//title of web  browser
+        stage.setTitle("NepBrow");//title
         stage.getIcons().add(new Image("file:Resources/browser.png"));
         stage.show();
     }
