@@ -221,6 +221,7 @@ public class HelloController implements Initializable {
 
         }
 
+        // Delete history function
         public void deleteHistByDate(LocalDate StartDate,LocalDate EndDate,String fileName){
             ArrayList<HistoryObject> ar= new ArrayList();
 
@@ -271,7 +272,7 @@ public class HelloController implements Initializable {
         }
     }
 
-    //handle download tasks
+    // download tasks
     private class DownloadTask extends Task<Void> {
 
         private String url;
