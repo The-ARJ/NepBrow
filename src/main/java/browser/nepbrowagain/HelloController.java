@@ -83,7 +83,7 @@ public class HelloController implements Initializable {
     private Menu historyMenu = new Menu(); //no need to make final
 
     @FXML
-    AnchorPane downloadAnchorPane;
+    AnchorPane downloadAnchorPane;  // creating object downloadAnchorPane
 
     // making class historyObject
     public class HistoryObject implements Serializable {
