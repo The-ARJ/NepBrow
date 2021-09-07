@@ -1004,7 +1004,7 @@ public class HelloController implements Initializable {
 
 
     @FXML
-    private void backgroundImgFunction(){
+    private void backgroundImgFunction(){// for file
         Stage stage = new Stage();
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Resource File");
@@ -1051,7 +1051,7 @@ public class HelloController implements Initializable {
     private AnchorPane historyAnchorPane;
     @FXML
     private void historyLabelFunction(){
-        delHistLabel.setText("Permanently delete history");
+        delHistLabel.setText("Permanently delete history"); // for deleting history permanently
         m++;
         if(m%2 == 0){
             historyAnchorPane.setVisible(false);
