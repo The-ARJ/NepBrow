@@ -8,7 +8,7 @@ public class JDBC {
     ResultSet rows;
     int val;
     public JDBC() {
-        //registering the driver class
+        //connect to jdbc
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             //creating the connection
