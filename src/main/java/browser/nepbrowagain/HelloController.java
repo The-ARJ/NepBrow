@@ -342,6 +342,7 @@ public class HelloController implements Initializable {
         return root;
     }
 
+    // auto  complete textField function
     public class AutoCompleteTextField extends TextField{
         /** The existing auto complete entries. */
 
@@ -435,6 +436,7 @@ public class HelloController implements Initializable {
 
     }
 
+    // For new Tab
     class NewTab{
         //properties
         private final Tab newTab;
@@ -471,8 +473,9 @@ public class HelloController implements Initializable {
             borderPane = new BorderPane();
         }
 
+        // creating new tab
         public Tab createTab(){
-            goButton.setText("Search");
+            goButton.setText("Search"); // Search Pannel
             newTab.setText("New Tab");
 
             ImageView vi = new ImageView();
