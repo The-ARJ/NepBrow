@@ -16,7 +16,7 @@ public class JDBC {
             if (con != null) {
                 System.out.println("Database is Connected Successfully");
             }
-            //creating statement
+            //creating connection statement
             st = con.createStatement();
 
         } catch (Exception e) {
@@ -24,7 +24,7 @@ public class JDBC {
         }
     }
     public int insert(String query){
-        //execute query
+        // Execute query
         try{
             val = st.executeUpdate(query);
 
