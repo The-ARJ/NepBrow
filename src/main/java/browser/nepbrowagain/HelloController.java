@@ -315,13 +315,13 @@ public class HelloController implements Initializable {
             downloadStatusLabel.setText("File download complete");
         }
     }
-    //create content for downloads
+    //create contents for downloads
     private Parent createContent() {
         VBox root = new VBox();
         root.setPrefSize(300, 400);
 
         TextField fieldURL = new TextField();
-        fieldURL.setPromptText("Enter Download Link here");
+        fieldURL.setPromptText("Enter Download Link here");  // Link to download
         root.getChildren().addAll(fieldURL);
 
         fieldURL.setOnAction(event -> {
