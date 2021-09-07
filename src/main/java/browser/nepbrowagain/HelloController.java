@@ -286,7 +286,7 @@ public class HelloController implements Initializable {
             long fileLength = connection.getContentLengthLong();
 
             try (InputStream is = connection.getInputStream();
-                 OutputStream os = Files.newOutputStream(Paths.get("downloadedfile" + ext))) {
+                 OutputStream os = Files.newOutputStream(Paths.get("Downloaded file" + ext))) {
 
                 long nread = 0L;
                 byte[] buf = new byte[8192];
@@ -310,7 +310,7 @@ public class HelloController implements Initializable {
         @Override
         protected void succeeded() {
             System.out.println("downloaded");
-            downloadStatusLabel.setText("File download complete");
+            downloadStatusLabel.setText("File downloaded");
         }
     }
     //create content for downloads
@@ -319,7 +319,7 @@ public class HelloController implements Initializable {
         root.setPrefSize(300, 400);
 
         TextField fieldURL = new TextField();
-        fieldURL.setPromptText("Enter Download Link here");
+        fieldURL.setPromptText("Insert Download Link here");
         root.getChildren().addAll(fieldURL);
 
         fieldURL.setOnAction(event -> {
@@ -359,7 +359,7 @@ public class HelloController implements Initializable {
                 return "http://www.bing.com/search?q=" + urlStr;
             }
             else{
-                System.out.println("No search eninge by " + engineName + " found.");
+                System.out.println("No search engine by " + engineName + " found.");
                 return null;
             }
         }
@@ -392,7 +392,7 @@ public class HelloController implements Initializable {
         }
     }
 
-    SearchEngine srcEng = new SearchEngine("google", "http://www.google.com");
+    SearchEngine srcEng = new SearchEngine("Google", "http://www.google.com");
 
     @FXML
      CheckMenuItem googleMenuItm;
@@ -410,24 +410,24 @@ public class HelloController implements Initializable {
             {
                 googleMenuItm.setSelected(false);
                 EtG=0; EtB=1;
-                srcEng.setEngine("bing");//Bing is the engine and Google is disabled
+                srcEng.setEngine("Bing");//Bing is the engine and Google is disabled
             }
             else
             {
                 bingMenuItm.setSelected(false);
                 EtG=1; EtB=0;
-                srcEng.setEngine("google");//Google is the engine and Bing is disabled
+                srcEng.setEngine("Google");//Google is the engine and Bing is disabled
             }
         }
         else if(googleMenuItm.isSelected()){
             srcEng.setEngine("google");//Search Engine google
-            System.out.println("Google is Active");
+            System.out.println("Google is Active.");
             EtG=1;
         }
 
         else if(bingMenuItm.isSelected()){
             srcEng.setEngine("bing");//Search Engine Bing
-            System.out.println("Bing is Active");
+            System.out.println("Bing is Active.");
             EtB=1;
         }
 
@@ -509,7 +509,7 @@ public class HelloController implements Initializable {
             AnchorPane.setRightAnchor(menuBar, 0.0);
 
 
-            urlBox.setPromptText("🔎 Enter URL Here");
+            urlBox.setPromptText("🔎 Search Bar");
             urlBox.setPrefHeight(30);
             urlBox.setPrefWidth(700);
             goButton.setPrefHeight(30);
@@ -1070,11 +1070,11 @@ public class HelloController implements Initializable {
     @FXML
     private void deleteHistoryFunction(){
         if(delEndDatePicker.getValue() == null){
-            delHistLabel.setText("Please enter end date.");
+            delHistLabel.setText("Enter end date.");
         }
 
         if(delStartDatePicker.getValue() == null){
-            delHistLabel.setText("Please enter start date.");
+            delHistLabel.setText("Enter start date.");
         }
 
         if(delStartDatePicker.getValue() != null && delEndDatePicker.getValue() != null){
