@@ -73,17 +73,17 @@ import org.w3c.dom.NodeList;
 
 public class HelloController implements Initializable {
 
-    @FXML
+    @FXML    // creating object tabPane
     TabPane tabPane;
 
     @FXML
-    Label downloadStatusLabel;
+    Label downloadStatusLabel;  //creating object downloadStatusLabel
 
     @FXML
     private Menu historyMenu = new Menu(); //no need to make final
 
     @FXML
-    AnchorPane downloadAnchorPane;
+    AnchorPane downloadAnchorPane;  // creating object downloadAnchorPane
 
     // making class historyObject
     public class HistoryObject implements Serializable {

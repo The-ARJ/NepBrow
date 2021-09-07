@@ -3,10 +3,13 @@ package browser.nepbrowagain;
 import java.sql.*;
 
 public class JDBC {
+    // creating objects
     Connection con;
     Statement st;
     ResultSet rows;
     int val;
+
+
     public JDBC() {
         //connection to jdbc
         try{
