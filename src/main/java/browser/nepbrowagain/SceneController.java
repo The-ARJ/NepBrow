@@ -60,7 +60,7 @@ public class SceneController {
             if(Full_Name.getText().isBlank()==true && user_name.getText().isBlank()==true && email.getText().isBlank()==true && password.getText().isBlank()==true) {
                 signuplabel.setText("Please Enter Credentials");}
 
-
+            // inserting value into tbl_registration
             if(Full_Name.getText().isBlank()==false && user_name.getText().isBlank()==false && email.getText().isBlank()==false && password.getText().isBlank()==false) {
                 String sql = "Insert Into tbl_registration(FullName,UserName,Email,Password) Values('"+full_name+"','"+user_Name+"','"+user_email+"','"+user_password+"')";
                 int ans = jdbc.insert(sql);
