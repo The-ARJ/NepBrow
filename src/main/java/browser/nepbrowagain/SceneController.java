@@ -105,7 +105,7 @@ public class SceneController {
             ResultSet queryResult = jdbc.select(verifyLogin);
             while((queryResult.next())){
                 if (queryResult.getInt(1)==1){
-                    LoginMessage.setText("Login Successful");
+                    LoginMessage.setText("Login Successful"); // Login message display
                     Stage Window = (Stage) SignIN.getScene().getWindow();
                     Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
                     Window.setScene(new Scene(root));
