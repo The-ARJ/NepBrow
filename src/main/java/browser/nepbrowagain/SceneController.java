@@ -27,7 +27,7 @@ public class SceneController {
     @FXML   // Registration
     TextField Full_Name,user_name,email;
 
-    @FXML
+    @FXML//password
     PasswordField Password,password;
 
     @FXML
