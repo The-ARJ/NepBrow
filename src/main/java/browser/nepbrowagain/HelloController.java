@@ -1065,7 +1065,7 @@ public class HelloController implements Initializable {
     @FXML
     private void bookmarkButtonFunction(){
         System.out.println("Bookmark button pressed.");
-    }
+    } // for bookmark button
 
     @FXML
     private void deleteHistoryFunction(){
