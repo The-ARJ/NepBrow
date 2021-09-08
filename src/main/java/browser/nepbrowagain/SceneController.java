@@ -17,24 +17,27 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.ResultSet;
 
+// sceneController operations
+
 public class SceneController {
+    // defines buttons
     @FXML
     JFXButton SignIN,SignUP,AlreadyHaveAccount,CreateNewAccount;
 
-    @FXML//userLogin
+    @FXML   // UserLogin
     TextField UserName;
 
-    @FXML //registration
+    @FXML   // Registration
     TextField Full_Name,user_name,email;
 
-    @FXML
+    @FXML//password
     PasswordField Password,password;
 
     @FXML
-    Label LoginMessage;//signin
+    Label LoginMessage;// SignIn
 
     @FXML//signup
-    Label signuplabel,signuplabel2;
+    Label signuplabel, signuplabel2;
 
     private Stage stage;
     private Scene scene;
@@ -51,7 +54,7 @@ public class SceneController {
 
 
 
-        //USER REGISTRATION AND SIGN UP BUTTON FUNCTION
+        //USER REGISTRATION AND SIGN UP BUTTON FUNCTIONS
         SignUP.setOnAction(e ->{
             System.out.println("Button pressed");
             JDBC jdbc = new JDBC();
@@ -60,7 +63,7 @@ public class SceneController {
             if(Full_Name.getText().isBlank()==true && user_name.getText().isBlank()==true && email.getText().isBlank()==true && password.getText().isBlank()==true) {
                 signuplabel.setText("Please Enter Credentials");}
 
-
+            // inserting value into tbl_registration
             if(Full_Name.getText().isBlank()==false && user_name.getText().isBlank()==false && email.getText().isBlank()==false && password.getText().isBlank()==false) {
                 String sql = "Insert Into tbl_registration(FullName,UserName,Email,Password) Values('"+full_name+"','"+user_Name+"','"+user_email+"','"+user_password+"')";
                 int ans = jdbc.insert(sql);
@@ -83,7 +86,7 @@ public class SceneController {
     }
 
 
-    //Already have account Function
+    // having already account
     public void handlebutton3() throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
         Stage Window = (Stage) AlreadyHaveAccount.getScene().getWindow();
@@ -103,7 +106,7 @@ public class SceneController {
             ResultSet queryResult = jdbc.select(verifyLogin);
             while((queryResult.next())){
                 if (queryResult.getInt(1)==1){
-                    LoginMessage.setText("Login Successful");
+                    LoginMessage.setText("Login Successful"); // Login message display
                     Stage Window = (Stage) SignIN.getScene().getWindow();
                     Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
                     Window.setScene(new Scene(root));
@@ -118,7 +121,7 @@ public class SceneController {
 
 
 
-
+        // checking function value weather the value is true or not
         if (UserName.getText().isBlank()==true && Password.getText().isBlank()==true){
             LoginMessage.setText("Please Enter User Name And Password");
         }

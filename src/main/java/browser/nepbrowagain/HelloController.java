@@ -73,18 +73,19 @@ import org.w3c.dom.NodeList;
 
 public class HelloController implements Initializable {
 
-    @FXML
+    @FXML    // creating object tabPane
     TabPane tabPane;
 
     @FXML
-    Label downloadStatusLabel;
+    Label downloadStatusLabel;  //creating object downloadStatusLabel
 
     @FXML
     private Menu historyMenu = new Menu(); //no need to make final
 
     @FXML
-    AnchorPane downloadAnchorPane;
+    AnchorPane downloadAnchorPane;  // creating object downloadAnchorPane
 
+    // making class historyObject
     public class HistoryObject implements Serializable {
 
         String url;
@@ -220,6 +221,7 @@ public class HelloController implements Initializable {
 
         }
 
+
         public void deleteHistByDate(LocalDate StartDate,LocalDate EndDate,String fileName){
             ArrayList<HistoryObject> ar= new ArrayList();
 
@@ -270,7 +272,6 @@ public class HelloController implements Initializable {
         }
     }
 
-    //handle download tasks
     private class DownloadTask extends Task<Void> {
 
         private String url;
@@ -313,13 +314,13 @@ public class HelloController implements Initializable {
             downloadStatusLabel.setText("File download complete");
         }
     }
-    //create content for downloads
+    //create contents for downloads
     private Parent createContent() {
         VBox root = new VBox();
         root.setPrefSize(300, 400);
 
         TextField fieldURL = new TextField();
-        fieldURL.setPromptText("Enter Download Link here");
+        fieldURL.setPromptText("Enter Download Link here");  // Link to download
         root.getChildren().addAll(fieldURL);
 
         fieldURL.setOnAction(event -> {
@@ -340,6 +341,7 @@ public class HelloController implements Initializable {
         return root;
     }
 
+    // auto  complete textField function
     public class AutoCompleteTextField extends TextField{
         /** The existing auto complete entries. */
 
@@ -433,8 +435,9 @@ public class HelloController implements Initializable {
 
     }
 
+    // For new Tab
     class NewTab{
-        //properties
+        //define all properties
         private final Tab newTab;
         private final AnchorPane smallAnchor;
         private final ToolBar toolBar;
@@ -450,7 +453,7 @@ public class HelloController implements Initializable {
         private final BorderPane borderPane;
         private MyBrowser myBrowser;
 
-        //methods
+        //define all methods
         public NewTab(){
             newTab = new Tab();
             smallAnchor = new AnchorPane();
@@ -470,9 +473,10 @@ public class HelloController implements Initializable {
         }
 
         public Tab createTab(){
-            goButton.setText("Search");
+            goButton.setText("Search"); // Search Pannel
             newTab.setText("New Tab");
 
+            //calling back button methods
             ImageView vi = new ImageView();
             Image imge = new Image("file:Resources/left.png");
             vi.setImage(imge);
@@ -481,7 +485,7 @@ public class HelloController implements Initializable {
             backButton.setGraphic(vi);
 
 
-
+            //calling forward button methods
             ImageView vii = new ImageView();
             Image imgs = new Image("file:Resources/right.png");
             vii.setImage(imgs);
@@ -489,6 +493,8 @@ public class HelloController implements Initializable {
             vii.setFitWidth(25);
             forwardButton.setGraphic(vii);
 
+
+           //adding back button and forward button in toolbar
             toolBar.getItems().addAll(backButton, forwardButton);
             toolBar.setPrefHeight(40);
             toolBar.setStyle("-fx-background-color: #66FFCC; ");
@@ -508,7 +514,7 @@ public class HelloController implements Initializable {
             menuBar.setPadding(new Insets(6,0,0,0));
             AnchorPane.setRightAnchor(menuBar, 0.0);
 
-
+            // creating url box
             urlBox.setPromptText("🔎 Enter URL Here");
             urlBox.setPrefHeight(30);
             urlBox.setPrefWidth(700);
@@ -607,6 +613,7 @@ public class HelloController implements Initializable {
             }
         }
 
+        //  Setting table background
         public void setTabBackground(String imageFileLocation){
             ImageView iv = new ImageView();
             Image img = new Image(imageFileLocation);
@@ -654,7 +661,7 @@ public class HelloController implements Initializable {
                                 EventListener listener = new EventListener() {
                                     public void handleEvent(Event ev) {
                                         //Platform.exit();
-                                        System.out.println("You pressed on a link");
+                                        System.out.println("You pressed on link"); // for pressing on the link
                                     }
                                 };
 
@@ -683,14 +690,14 @@ public class HelloController implements Initializable {
                                 tabPane.getTabs().add(tab);
                                 tabPane.getSelectionModel().select(tab); //take this tab to front
                                 newTabBtnPosRight();
-                            });
+                            }); // done
                             historyMenu.setText(LocalDate.now().toString());
                             historyMenu.getItems().add(menuItem);
                                                                  }
                                                              }
                                                          }
                 );
-                //right button clicked options
+                // Right button clicked options
                 webEngine.setCreatePopupHandler(
                         (PopupFeatures config) -> {
                             browser.setFontScale(0.8);
@@ -708,7 +715,7 @@ public class HelloController implements Initializable {
             }
 
 
-            //pop up control /right button clicked options
+            // pop up control /right button clicked options
             private void createContextMenu(WebView webView) {
                 ContextMenu contextMenu = new ContextMenu();
                 MenuItem reload = new MenuItem("Reload");
@@ -758,7 +765,7 @@ public class HelloController implements Initializable {
                             ? 1
                             : 0);
                 });
-            }
+            } //forward button
 
             public ImageView loadFavicon(String location) {
                 try {
@@ -919,7 +926,7 @@ public class HelloController implements Initializable {
         iv.setFitWidth(20);
         homeBtn.setGraphic(iv);
 
-        ImageView iv2 = new ImageView();
+        ImageView iv2 = new ImageView(); // download icon
         Image img2 = new Image("file:Resources/downloadIcon.png");
         iv2.setImage(img2);
         iv2.setFitHeight(21);
@@ -934,7 +941,7 @@ public class HelloController implements Initializable {
         bookmarkButton.setGraphic(iv3);
 
 
-        //Instantiating history object
+        // Instantiating history object
         histObj = new HistoryObject();
         startDatePicker.setOnAction(new EventHandler() {
             public void handle(Event t) {
@@ -1004,7 +1011,7 @@ public class HelloController implements Initializable {
 
 
     @FXML
-    private void backgroundImgFunction(){
+    private void backgroundImgFunction(){// for file
         Stage stage = new Stage();
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Resource File");
@@ -1051,7 +1058,7 @@ public class HelloController implements Initializable {
     private AnchorPane historyAnchorPane;
     @FXML
     private void historyLabelFunction(){
-        delHistLabel.setText("Permanently delete history");
+        delHistLabel.setText("Permanently delete history"); // for deleting history permanently
         m++;
         if(m%2 == 0){
             historyAnchorPane.setVisible(false);
