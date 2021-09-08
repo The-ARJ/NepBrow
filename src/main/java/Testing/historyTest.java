@@ -2,7 +2,7 @@ package Testing;
 
 public class historyTest {
     public static void main(String[] args) {
-        String file = ".com .org .edu";//file type
+        String file = ".com .org .edu";//file types
 
         historySaved(file);
     }
