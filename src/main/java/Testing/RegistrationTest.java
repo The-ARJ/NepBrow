@@ -1,13 +1,23 @@
 package Testing;
 
+import java.nio.file.attribute.UserPrincipal;
+
 public class RegistrationTest {
 
-    public boolean UserRegister(String FullName, String uname, String Email, String password) {
-        boolean result = true;
-        if(FullName==null && uname == null && Email==null && password==null) {
-            result = false;
+    public static void main(String[]args){
+        String userName=("AayushRaj");
+
+
+        isValidUserName(userName);
+
+
+    }
+
+    static boolean isValidUserName(String userName) {
+        if(userName.contains("/")||userName.contains("#")|| userName.contains(" ")||userName.contains("_")||userName.contains("@")){
+            return false;
         }
-        return result;
+        return true;
     }
 
 }
