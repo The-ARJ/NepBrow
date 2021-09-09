@@ -37,7 +37,7 @@ public class JDBC {
         try {
             rows = st.executeQuery(query);
 
-        } catch (SQLException throwables) {
+        } catch (SQLException throwables) { //throwables
             throwables.printStackTrace();
         }return rows;
     }
