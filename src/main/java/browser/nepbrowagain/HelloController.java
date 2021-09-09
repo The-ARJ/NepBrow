@@ -154,7 +154,7 @@ public class HelloController implements Initializable {
 
         }
 
-        public ArrayList<HistoryObject> getAllHistory(String fileName){
+        public ArrayList<HistoryObject> getAllHistory(String fileName){ // for getting all history
             ArrayList<HistoryObject> ar = new ArrayList();
             BufferedReader br = null;
             try {
@@ -361,8 +361,8 @@ public class HelloController implements Initializable {
                 return "http://www.bing.com/search?q=" + urlStr;
             }
             else{
-                System.out.println("No search eninge by " + engineName + " found.");
-                return null;
+                System.out.println("No search engine by " + engineName + " found.");
+                return null; // for search engine i.e google
             }
         }
 
@@ -517,13 +517,13 @@ public class HelloController implements Initializable {
             // creating url box
             urlBox.setPromptText("🔎 Enter URL Here");
             urlBox.setPrefHeight(30);
-            urlBox.setPrefWidth(700);
+            urlBox.setPrefWidth(750);
             goButton.setPrefHeight(30);
             goButton.setPrefWidth(60);
             goButton.setStyle("-fx-background-color: #1FE31D; ");
 
             reloadButton.setText("↺");
-            reloadButton.setPrefHeight(30);
+            reloadButton.setPrefHeight(30); // for the size of the boxes
             reloadButton.setPrefWidth(24);
 
             hBox.getChildren().addAll(urlBox, goButton, reloadButton);
