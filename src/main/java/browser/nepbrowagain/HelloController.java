@@ -609,7 +609,7 @@ public class HelloController implements Initializable {
                 borderPane.setCenter(myBrowser);
             }
             else{
-                label.setText("Empty Field");
+                label.setText("Empty Field"); //empty
             }
         }
 
@@ -628,7 +628,7 @@ public class HelloController implements Initializable {
 
         class MyBrowser extends Region{
             WebView browser = new WebView();
-            final WebEngine webEngine = browser.getEngine();
+            final WebEngine webEngine = browser.getEngine(); // browser history settings
             WebHistory history = webEngine.getHistory();
 
             public MyBrowser(String url) {
