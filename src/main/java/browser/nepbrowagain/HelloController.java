@@ -948,7 +948,7 @@ public class HelloController implements Initializable {
                 ObservableList<String> prevHistItems = FXCollections.observableArrayList ();
                 LocalDate date = startDatePicker.getValue();
                 System.err.println("Selected date: " + date);
-                ArrayList<HistoryObject> ar = new ArrayList();
+                ArrayList<HistoryObject> ar = new ArrayList();// for the array list
                 if(endDatePicker.getValue() == null){
                     ar = histObj.getHistByDate(startDatePicker.getValue(),startDatePicker.getValue(), "hist.txt");
                     for (int i = 0; i < ar.size(); i++) {
