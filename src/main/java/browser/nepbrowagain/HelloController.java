@@ -154,7 +154,7 @@ public class HelloController implements Initializable {
 
         }
 
-        public ArrayList<HistoryObject> getAllHistory(String fileName){
+        public ArrayList<HistoryObject> getAllHistory(String fileName){ // for getting all history
             ArrayList<HistoryObject> ar = new ArrayList();
             BufferedReader br = null;
             try {
@@ -276,13 +276,13 @@ public class HelloController implements Initializable {
 
         private String url;
 
-        public DownloadTask(String url) {
+        public DownloadTask(String url) {  // for string url
             this.url = url;
         }
 
         @Override
         protected Void call() throws Exception {
-            String ext = url.substring(url.lastIndexOf("."), url.length());
+            String ext = url.substring(url.lastIndexOf("."), url.length()); //for url length
             URLConnection connection = new URL(url).openConnection();
             long fileLength = connection.getContentLengthLong();
 
@@ -361,8 +361,8 @@ public class HelloController implements Initializable {
                 return "http://www.bing.com/search?q=" + urlStr;
             }
             else{
-                System.out.println("No search eninge by " + engineName + " found.");
-                return null;
+                System.out.println("No search engine by " + engineName + " found.");
+                return null; // for search engine i.e google
             }
         }
 
@@ -473,7 +473,7 @@ public class HelloController implements Initializable {
         }
 
         public Tab createTab(){
-            goButton.setText("Search"); // Search Pannel
+            goButton.setText("Search"); // Search Panel
             newTab.setText("New Tab");
 
             //calling back button methods
@@ -517,13 +517,13 @@ public class HelloController implements Initializable {
             // creating url box
             urlBox.setPromptText("🔎 Enter URL Here");
             urlBox.setPrefHeight(30);
-            urlBox.setPrefWidth(700);
+            urlBox.setPrefWidth(750);
             goButton.setPrefHeight(30);
             goButton.setPrefWidth(60);
             goButton.setStyle("-fx-background-color: #1FE31D; ");
 
             reloadButton.setText("↺");
-            reloadButton.setPrefHeight(30);
+            reloadButton.setPrefHeight(30); // for the size of the boxes
             reloadButton.setPrefWidth(24);
 
             hBox.getChildren().addAll(urlBox, goButton, reloadButton);
@@ -609,7 +609,7 @@ public class HelloController implements Initializable {
                 borderPane.setCenter(myBrowser);
             }
             else{
-                label.setText("Empty Field");
+                label.setText("Empty Field"); //empty
             }
         }
 
@@ -628,7 +628,7 @@ public class HelloController implements Initializable {
 
         class MyBrowser extends Region{
             WebView browser = new WebView();
-            final WebEngine webEngine = browser.getEngine();
+            final WebEngine webEngine = browser.getEngine(); // browser history settings
             WebHistory history = webEngine.getHistory();
 
             public MyBrowser(String url) {
@@ -767,7 +767,7 @@ public class HelloController implements Initializable {
                 });
             } //forward button
 
-            public ImageView loadFavicon(String location) {
+            public ImageView loadFavicon(String location) { //for string locations and more
                 try {
                     String faviconUrl;
                     if(webEngine.getTitle().equalsIgnoreCase("Google")){
@@ -805,7 +805,7 @@ public class HelloController implements Initializable {
                 layoutInArea(browser,0,0,w,h,0, HPos.CENTER, VPos.CENTER);
             }
 
-            @Override protected double computePrefWidth(double height) {
+            @Override protected double computePrefWidth(double height) { // for doubling the height
                 return 750;
             }
 
@@ -856,7 +856,7 @@ public class HelloController implements Initializable {
     }
 
     @FXML
-    private Label downloadLabel;
+    private Label downloadLabel; //download label
     @FXML
     private void downloadBtnHover(){
         downloadLabel.setText("Downloads");
@@ -914,7 +914,7 @@ public class HelloController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        aTab.setTabBackground("file:Resources/HomeBackground.jpg");
+        aTab.setTabBackground("file:Resources/HomeBackground.jpg"); //resource locations
         Tab tab = aTab.createTab();
         tab.setText("Home Tab");
         tabPane.getTabs().add(tab);
@@ -943,12 +943,12 @@ public class HelloController implements Initializable {
 
         // Instantiating history object
         histObj = new HistoryObject();
-        startDatePicker.setOnAction(new EventHandler() {
+        startDatePicker.setOnAction(new EventHandler() { //event handler action
             public void handle(Event t) {
                 ObservableList<String> prevHistItems = FXCollections.observableArrayList ();
                 LocalDate date = startDatePicker.getValue();
                 System.err.println("Selected date: " + date);
-                ArrayList<HistoryObject> ar = new ArrayList();
+                ArrayList<HistoryObject> ar = new ArrayList();// for the array list
                 if(endDatePicker.getValue() == null){
                     ar = histObj.getHistByDate(startDatePicker.getValue(),startDatePicker.getValue(), "hist.txt");
                     for (int i = 0; i < ar.size(); i++) {
@@ -984,7 +984,7 @@ public class HelloController implements Initializable {
                 ObservableList<String> prevHistItems = FXCollections.observableArrayList ();
                 LocalDate date = endDatePicker.getValue();
                 System.err.println("Selected date: " + date);
-                ArrayList<HistoryObject> ar = new ArrayList();
+                ArrayList<HistoryObject> ar = new ArrayList(); //for date
                 if(startDatePicker.getValue() == null){
                     ar = histObj.getHistByDate(endDatePicker.getValue(), endDatePicker.getValue(), "hist.txt");
                     for (int i = 0; i < ar.size(); i++) {
@@ -1029,7 +1029,7 @@ public class HelloController implements Initializable {
 
 
         aTab = new NewTab();
-        aTab.setTabBackground("file:Resources/TabHomeWallpaper.jpg");
+        aTab.setTabBackground("file:Resources/TabHomeWallpaper.jpg"); //for wallpapers :)
         Tab tab = aTab.createTab();
         tab.setText("Home Tab");
         tabPane.getTabs().add(tab);
@@ -1091,3 +1091,4 @@ public class HelloController implements Initializable {
         }
     }
 }
+//end

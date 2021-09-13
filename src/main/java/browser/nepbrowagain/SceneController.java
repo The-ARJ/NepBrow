@@ -17,27 +17,24 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.ResultSet;
 
-// sceneController operations
-
 public class SceneController {
-    // defines buttons
     @FXML
     JFXButton SignIN,SignUP,AlreadyHaveAccount,CreateNewAccount;
 
-    @FXML   // UserLogin
+    @FXML//userLogin
     TextField UserName;
 
-    @FXML   // Registration
+    @FXML //registration
     TextField Full_Name,user_name,email;
 
-    @FXML//password
+    @FXML
     PasswordField Password,password;
 
     @FXML
-    Label LoginMessage;// SignIn
+    Label LoginMessage;//signin
 
     @FXML//signup
-    Label signuplabel, signuplabel2;
+    Label signuplabel,signuplabel2;
 
     private Stage stage;
     private Scene scene;
@@ -47,38 +44,35 @@ public class SceneController {
 
     //SIGNUP/REGISTRATION BUTTON FUNCTION
     public void handlebutton1() throws IOException {
+        String full_name = Full_Name.getText();
+        String user_Name = user_name.getText();
+        String user_email = email.getText();
+        String user_password = password.getText();
 
 
-        //USER REGISTRATION AND SIGN UP BUTTON FUNCTIONS
+
+        //USER REGISTRATION AND SIGN UP BUTTON FUNCTION
         SignUP.setOnAction(e ->{
-            String full_name = Full_Name.getText();
-            String user_Name = user_name.getText();
-            String user_email = email.getText();
-            String user_password = password.getText();
+            System.out.println("Button pressed");
             JDBC jdbc = new JDBC();
 
-            // inserting value into tbl_registration
-            if(!Full_Name.getText().isBlank() && !user_name.getText().isBlank() && !email.getText().isBlank() && !password.getText().isBlank()) {
+
+            if(Full_Name.getText().isBlank()==true && user_name.getText().isBlank()==true && email.getText().isBlank()==true && password.getText().isBlank()==true) {
+                signuplabel.setText("Please Enter Credentials");}
+
+
+            if(Full_Name.getText().isBlank()==false && user_name.getText().isBlank()==false && email.getText().isBlank()==false && password.getText().isBlank()==false) {
                 String sql = "Insert Into tbl_registration(FullName,UserName,Email,Password) Values('"+full_name+"','"+user_Name+"','"+user_email+"','"+user_password+"')";
                 int ans = jdbc.insert(sql);
                 if (ans>0) {
                     signuplabel.setVisible(false);
                     signuplabel2.setText("Sign Up Completed");
-                    Full_Name.setText("");
-                    user_name.setText("");
-                    email.setText("");
-                    password.setText("");
+
 
                 }
             }
-
-            else if(Full_Name.getText().isBlank() || user_name.getText().isBlank() || email.getText().isBlank() || password.getText().isBlank()) {
-                signuplabel.setText("Please Enter all the Credentials");}
-        });
+  });
     }
-
-
-
 
     //Create New Account Function
     public void handlebutton2() throws IOException {
@@ -89,7 +83,7 @@ public class SceneController {
     }
 
 
-    // having already account
+    //Already have account Function
     public void handlebutton3() throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
         Stage Window = (Stage) AlreadyHaveAccount.getScene().getWindow();
@@ -109,7 +103,7 @@ public class SceneController {
             ResultSet queryResult = jdbc.select(verifyLogin);
             while((queryResult.next())){
                 if (queryResult.getInt(1)==1){
-                    LoginMessage.setText("Login Successful"); // Login message display
+                    LoginMessage.setText("Login Successful");
                     Stage Window = (Stage) SignIN.getScene().getWindow();
                     Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
                     Window.setScene(new Scene(root));
@@ -124,14 +118,14 @@ public class SceneController {
 
 
 
-        // checking function value weather the value is true or not
-        if (UserName.getText().isBlank() && Password.getText().isBlank()){
+
+        if (UserName.getText().isBlank()==true && Password.getText().isBlank()==true){
             LoginMessage.setText("Please Enter User Name And Password");
         }
-        else if (UserName.getText().isBlank()){
+        else if (UserName.getText().isBlank()==true){
             LoginMessage.setText(("Please Enter Your User Name"));
         }
-        else if (Password.getText().isBlank()){
+        else if (Password.getText().isBlank()==true){
             LoginMessage.setText(("Please Enter Your Password"));
         }
 
