@@ -914,7 +914,7 @@ public class HelloController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        aTab.setTabBackground("file:Resources/HomeBackground.jpg");
+        aTab.setTabBackground("file:Resources/HomeBackground.jpg"); //resource locations
         Tab tab = aTab.createTab();
         tab.setText("Home Tab");
         tabPane.getTabs().add(tab);
@@ -943,7 +943,7 @@ public class HelloController implements Initializable {
 
         // Instantiating history object
         histObj = new HistoryObject();
-        startDatePicker.setOnAction(new EventHandler() {
+        startDatePicker.setOnAction(new EventHandler() { //event handler action
             public void handle(Event t) {
                 ObservableList<String> prevHistItems = FXCollections.observableArrayList ();
                 LocalDate date = startDatePicker.getValue();
