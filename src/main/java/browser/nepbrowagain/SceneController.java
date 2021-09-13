@@ -47,21 +47,15 @@ public class SceneController {
 
     //SIGNUP/REGISTRATION BUTTON FUNCTION
     public void handlebutton1() throws IOException {
-        String full_name = Full_Name.getText();
-        String user_Name = user_name.getText();
-        String user_email = email.getText();
-        String user_password = password.getText();
-
 
 
         //USER REGISTRATION AND SIGN UP BUTTON FUNCTIONS
         SignUP.setOnAction(e ->{
-            System.out.println("Button pressed");
+            String full_name = Full_Name.getText();
+            String user_Name = user_name.getText();
+            String user_email = email.getText();
+            String user_password = password.getText();
             JDBC jdbc = new JDBC();
-
-
-            if(Full_Name.getText().isBlank() || user_name.getText().isBlank() || email.getText().isBlank() || password.getText().isBlank()) {
-                signuplabel.setText("Please Enter Credentials");}
 
             // inserting value into tbl_registration
             if(!Full_Name.getText().isBlank() && !user_name.getText().isBlank() && !email.getText().isBlank() && !password.getText().isBlank()) {
@@ -77,8 +71,14 @@ public class SceneController {
 
                 }
             }
-  });
+
+            else if(Full_Name.getText().isBlank() || user_name.getText().isBlank() || email.getText().isBlank() || password.getText().isBlank()) {
+                signuplabel.setText("Please Enter all the Credentials");}
+        });
     }
+
+
+
 
     //Create New Account Function
     public void handlebutton2() throws IOException {
