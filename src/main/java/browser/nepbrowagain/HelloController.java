@@ -805,7 +805,7 @@ public class HelloController implements Initializable {
                 layoutInArea(browser,0,0,w,h,0, HPos.CENTER, VPos.CENTER);
             }
 
-            @Override protected double computePrefWidth(double height) {
+            @Override protected double computePrefWidth(double height) { // for doubling the height
                 return 750;
             }
 
