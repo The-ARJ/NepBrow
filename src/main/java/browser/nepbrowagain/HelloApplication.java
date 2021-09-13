@@ -23,7 +23,7 @@ public class HelloApplication extends Application {
         primaryStage.setTitle("NepBrow");//title of web  browser
         primaryStage.getIcons().add(new Image("file:Resources/browser.png")); //img for browser
         primaryStage.show();
-    }
+    } // for showing
 
 
 
