@@ -977,7 +977,7 @@ public class HelloController implements Initializable {
                 ObservableList<String> prevHistItems = FXCollections.observableArrayList ();
                 LocalDate date = endDatePicker.getValue();
                 System.err.println("Selected date: " + date);
-                ArrayList<HistoryObject> ar = new ArrayList();
+                ArrayList<HistoryObject> ar = new ArrayList(); //for date
                 if(startDatePicker.getValue() == null){
                     ar = histObj.getHistByDate(endDatePicker.getValue(), endDatePicker.getValue(), "hist.txt");
                     for (int i = 0; i < ar.size(); i++) {
@@ -1022,7 +1022,7 @@ public class HelloController implements Initializable {
 
 
         aTab = new NewTab();
-        aTab.setTabBackground("file:Resources/TabHomeWallpaper.jpg");
+        aTab.setTabBackground("file:Resources/TabHomeWallpaper.jpg"); //for wallpapers :)
         Tab tab = aTab.createTab();
         tab.setText("Home Tab");
         tabPane.getTabs().add(tab);
@@ -1084,3 +1084,4 @@ public class HelloController implements Initializable {
         }
     }
 }
+//end
