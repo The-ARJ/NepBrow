@@ -17,13 +17,13 @@ public class HelloApplication extends Application {
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
 
-        Scene scene = new Scene(root); // for new scene
+        Scene scene = new Scene(root);
 
         primaryStage.setScene(scene);
         primaryStage.setTitle("NepBrow");//title of web  browser
-        primaryStage.getIcons().add(new Image("file:Resources/browser.png")); //img for browser
+        primaryStage.getIcons().add(new Image("file:Resources/browser.png"));
         primaryStage.show();
-    } // for showing
+    }
 
 
 

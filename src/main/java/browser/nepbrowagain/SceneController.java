@@ -66,7 +66,7 @@ public class SceneController {
                 int ans = jdbc.insert(sql);
                 if (ans>0) {
                     signuplabel.setVisible(false);
-                    signuplabel2.setText("Sign Up Completed");  //registration
+                    signuplabel2.setText("Sign Up Completed");
 
 
                 }
