@@ -70,6 +70,10 @@ public class SceneController {
                 if (ans>0) {
                     signuplabel.setVisible(false);
                     signuplabel2.setText("Sign Up Completed");
+                    Full_Name.setText("");
+                    user_name.setText("");
+                    email.setText("");
+                    password.setText("");
 
                 }
             }
