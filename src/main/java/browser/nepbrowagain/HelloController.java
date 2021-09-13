@@ -856,7 +856,7 @@ public class HelloController implements Initializable {
     }
 
     @FXML
-    private Label downloadLabel;
+    private Label downloadLabel; //download label
     @FXML
     private void downloadBtnHover(){
         downloadLabel.setText("Downloads");
