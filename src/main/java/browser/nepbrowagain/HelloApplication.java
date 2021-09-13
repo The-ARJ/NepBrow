@@ -24,7 +24,7 @@ public class HelloApplication extends Application {
         primaryStage.setTitle("NepBrow");//title of web  browser
         primaryStage.getIcons().add(new Image("file:Resources/logo1.png"));//inserting icon image
         primaryStage.show();
-    }
+    } // for showing
 
 
 
