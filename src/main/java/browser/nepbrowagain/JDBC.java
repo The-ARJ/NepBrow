@@ -14,7 +14,7 @@ public class JDBC {
             //creating the connection
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/browserjdbc", "root", "Gionees5.1");
             if (con != null) {
-                System.out.println("Database is Connected Successfully");
+                System.out.println("Database is Connected Successfully.");
             }
             //creating statement
             st = con.createStatement();

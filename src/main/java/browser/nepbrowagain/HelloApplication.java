@@ -17,7 +17,7 @@ public class HelloApplication extends Application {
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
 
-        Scene scene = new Scene(root);
+        Scene scene = new Scene(root); // for new scene
 
         primaryStage.setScene(scene);
         primaryStage.setTitle("NepBrow");//title of web  browser
