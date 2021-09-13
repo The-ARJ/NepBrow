@@ -767,7 +767,7 @@ public class HelloController implements Initializable {
                 });
             } //forward button
 
-            public ImageView loadFavicon(String location) {
+            public ImageView loadFavicon(String location) { //for string locations and more
                 try {
                     String faviconUrl;
                     if(webEngine.getTitle().equalsIgnoreCase("Google")){
