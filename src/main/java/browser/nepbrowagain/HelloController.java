@@ -276,13 +276,13 @@ public class HelloController implements Initializable {
 
         private String url;
 
-        public DownloadTask(String url) {
+        public DownloadTask(String url) {  // for string url
             this.url = url;
         }
 
         @Override
         protected Void call() throws Exception {
-            String ext = url.substring(url.lastIndexOf("."), url.length());
+            String ext = url.substring(url.lastIndexOf("."), url.length()); //for url length
             URLConnection connection = new URL(url).openConnection();
             long fileLength = connection.getContentLengthLong();
 
