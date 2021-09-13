@@ -60,7 +60,7 @@ public class SceneController {
             JDBC jdbc = new JDBC();
 
 
-            if(Full_Name.getText().isBlank() && user_name.getText().isBlank() && email.getText().isBlank() && password.getText().isBlank()) {
+            if(Full_Name.getText().isBlank() || user_name.getText().isBlank() || email.getText().isBlank() || password.getText().isBlank()) {
                 signuplabel.setText("Please Enter Credentials");}
 
             // inserting value into tbl_registration
@@ -70,7 +70,6 @@ public class SceneController {
                 if (ans>0) {
                     signuplabel.setVisible(false);
                     signuplabel2.setText("Sign Up Completed");
-
 
                 }
             }
@@ -122,13 +121,13 @@ public class SceneController {
 
 
         // checking function value weather the value is true or not
-        if (UserName.getText().isBlank()==true && Password.getText().isBlank()==true){
+        if (UserName.getText().isBlank() && Password.getText().isBlank()){
             LoginMessage.setText("Please Enter User Name And Password");
         }
-        else if (UserName.getText().isBlank()==true){
+        else if (UserName.getText().isBlank()){
             LoginMessage.setText(("Please Enter Your User Name"));
         }
-        else if (Password.getText().isBlank()==true){
+        else if (Password.getText().isBlank()){
             LoginMessage.setText(("Please Enter Your Password"));
         }
 

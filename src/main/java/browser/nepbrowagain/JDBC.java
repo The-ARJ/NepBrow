@@ -3,25 +3,20 @@ package browser.nepbrowagain;
 import java.sql.*;
 
 public class JDBC {
-    // creating objects
     Connection con;
     Statement st;
     ResultSet rows;
     int val;
-
-
     public JDBC() {
-        //connection to jdbc
+        //registering the driver class
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-
             //creating the connection
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/browserjdbc", "root", "Gioness5.1");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/browserjdbc", "root", "Gionees5.1");
             if (con != null) {
                 System.out.println("Database is Connected Successfully");
             }
-
-            //creating connection statement
+            //creating statement
             st = con.createStatement();
 
         } catch (Exception e) {
@@ -29,8 +24,7 @@ public class JDBC {
         }
     }
     public int insert(String query){
-
-        // Execute query
+        //execute query
         try{
             val = st.executeUpdate(query);
 
