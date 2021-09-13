@@ -473,7 +473,7 @@ public class HelloController implements Initializable {
         }
 
         public Tab createTab(){
-            goButton.setText("Search"); // Search Pannel
+            goButton.setText("Search"); // Search Panel
             newTab.setText("New Tab");
 
             //calling back button methods
